@@ -9,7 +9,7 @@ This analysis shows the growth of Zero Emission Vehicles (ZEVs) registration and
 
 
 ## Key Questions This Project Can Help Answer
-+ How has Zero Emission Vehicle (ZEV) adoption grown across California from 2020 to 2026?
++ How has Zero Emission Vehicle (ZEV) adoption grown across California from 2020 to 2025?
 + Is charging infrastructure keeping pace with ZEV adoption across different regions in California?
 
 
