@@ -71,11 +71,6 @@ merged.py
  + merge station data and vehicle registration data into one CSV for analysis 
  
 
-merged_analysis.py
- + Spatial Analysis
-    + Heat map showing ratio of number of registered vehicles to stations by type in 2025 by Zip Code
- 
-
 
 ## Visualizations: Maps and Plots
 
