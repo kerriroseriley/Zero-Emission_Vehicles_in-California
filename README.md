@@ -82,7 +82,7 @@ stat_analysis.py:
 
 1.  Cumulative ZEV Registration Growth 2020 through 2025
 
-![Cumulative ZEV Registration Growth 2020 through 2025](https://github.com/kerriroseriley/Zero-Emission-Vehicles-in-California/blob/2c257a18f99296c99f8af8c93518e51dc8c53d29/zev_growth_trend.png)
+![Cumulative ZEV Registration Growth 2020 through 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/56c73c0e5f3dcbeb6bfd3c38690d9fdf610b304b/outputs/zev_growth_trend.png)
 
 
 1. Number of Zero Emission Vehicle Chargers Opening in California 2020-2025 by Fuel Type
