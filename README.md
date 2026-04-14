@@ -68,7 +68,7 @@ stat_analysis.py:
 Infrastructure Analysis
 
 merged.py
- +merge station data and vehicle registration data into one CSV for analysis 
+ + merge station data and vehicle registration data into one CSV for analysis 
 
 merged_analysis.py
  + Spatial Analysis
