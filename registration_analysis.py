@@ -7,14 +7,10 @@ Output: growth + ZIP plots
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# -----------------------------
-# Load Data
-# -----------------------------
+# Load the data
 df = pd.read_csv("ZEVs_filtered.csv")
 
-# -----------------------------
-# Clean Data
-# -----------------------------
+# Clean the data
 df.columns = df.columns.str.strip()
 
 df["fuel"] = (
@@ -32,9 +28,7 @@ df["Year"] = df["Year"].astype(int)
 
 df["vehicles"] = pd.to_numeric(df["vehicles"], errors="coerce").fillna(0)
 
-# ====================================================
-# FINDING 1: YEARLY REGISTRATION GROWTH
-# ====================================================
+# Yearly Registration growth
 
 growth = df.groupby(["Year", "fuel"])["vehicles"].sum().unstack(fill_value=0)
 growth = growth.sort_index()
@@ -46,9 +40,7 @@ if "Battery Electric" not in growth.columns:
 if "Hydrogen Fuel Cell" not in growth.columns:
     growth["Hydrogen Fuel Cell"] = 0
 
-# -----------------------------
-# BEV Growth Plot
-# -----------------------------
+# Electrive Vehicle Growth
 plt.figure(figsize=(8,5))
 
 plt.plot(
@@ -68,9 +60,7 @@ plt.savefig("outputs/bev_growth.png", dpi=300)
 plt.show()
 
 
-# -----------------------------
 # Hydrogen Growth Plot
-# -----------------------------
 plt.figure(figsize=(8,5))
 
 plt.plot(
@@ -90,15 +80,11 @@ plt.savefig("outputs/h2_growth.png", dpi=300)
 plt.show()
 
 
-# ====================================================
-# FINDING 2: TOP ZIP CODE DISTRIBUTION
-# ====================================================
+# Top Zip Code Distribution
 
 zip_counts = df.groupby(["zip", "fuel"])["vehicles"].sum().reset_index()
 
-# -----------------------------
-# BEV ZIP TOP 10
-# -----------------------------
+# Electric Vehicle Distribution
 bev_zip = (
     zip_counts[zip_counts["fuel"] == "Battery Electric"]
     .sort_values("vehicles", ascending=False)
@@ -119,9 +105,7 @@ plt.savefig("outputs/bev_zip_top10.png", dpi=300)
 plt.show()
 
 
-# -----------------------------
-# HYDROGEN ZIP TOP 10
-# -----------------------------
+# Hydrogen Zip Code Distribution
 h2_zip = (
     zip_counts[zip_counts["fuel"] == "Hydrogen Fuel Cell"]
     .sort_values("vehicles", ascending=False)
