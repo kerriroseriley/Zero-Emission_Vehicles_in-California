@@ -41,7 +41,7 @@ ev_vehicle_zip = (
     ev_vehicles.groupby("zip")["vehicles"]
     .sum()
     .reset_index(name="num_ev_vehicles")
-)
+) 
 
 h2_vehicle_zip = (
     hydrogen_vehicles.groupby("zip")["vehicles"]
@@ -87,8 +87,8 @@ h2_results = merge_and_ratio(
 
 # Save Outputs
 
-ev_results.to_csv("ev_2025_zip_analysis.csv", index=False)
-h2_results.to_csv("hydrogen_2025_zip_analysis.csv", index=False)
+ev_results.to_csv("ELEC_ratio.csv", index=False)
+h2_results.to_csv("HY_ratio.csv", index=False)
 
 
 print(ev_results.head())
