@@ -72,7 +72,7 @@ stat_analysis.py:
 
 1. Top 10 Zip Codes of ZEV Registrations in 2025
 
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission-Vehicles-in-California/blob/ace37a290cd1db163af154116314c94882c3fdc5/zipcode_registration.png)
+![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/48de6889cd379696a96a97ee7b60659a6a1737e2/outputs/zipcode_registration.png)
 
 
 1. Top 10 Zip Codes by ZEV Charger Count in 2025
