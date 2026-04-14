@@ -49,7 +49,7 @@ for i, v in enumerate(hy_top10.values):
 plt.tight_layout()
 
 # Save image
-plt.savefig("top10_zip_charger_stations.png", dpi=300, bbox_inches="tight")
+plt.savefig("outputs/top10_zip_charger_stations.png", dpi=300, bbox_inches="tight")
 
 plt.show()
 
