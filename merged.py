@@ -78,7 +78,7 @@ ca_data["vehicles_per_charger"] = ca_data.apply(
 
 
 
-ca_data["valid_zip"] = 1  # placeholder like their is_ny column
+ca_data["valid_zip"] = 1  # placeholder
 
 
 # Save the output
