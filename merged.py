@@ -1,94 +1,95 @@
-
-# Import modules
 import pandas as pd
 
 pd.options.mode.copy_on_write = True
 
 
 # Load Data
-
-ev_vehicles = pd.read_csv("ZEVs_filtered.csv", dtype={"zip": str})
-ev_chargers = pd.read_csv("stations_2020_2025.csv", dtype={"ZIP": str})
-
-
-# Standardize the column names
-
-ev_vehicles = ev_vehicles.rename(columns={"zip": "zip"})
-ev_chargers = ev_chargers.rename(columns={"ZIP": "zip"})
+zev_vehicles = pd.read_csv("ZEVs_filtered.csv", dtype={"zip": str})
+zev_stations = pd.read_csv("stations_2020_2025.csv", dtype={"ZIP": str})
 
 
-# Clean the Zip Codes
-
-ev_vehicles["zip"] = ev_vehicles["zip"].astype(str).str.strip().str[:5]
-ev_chargers["zip"] = ev_chargers["zip"].astype(str).str.strip().str[:5]
-
-
-# Filter for the year of 2025
-
-ev_vehicles["Year"] = pd.to_numeric(ev_vehicles["Year"], errors="coerce")
-ev_chargers["Year"] = pd.to_numeric(ev_chargers["Year"], errors="coerce")
-
-ev_vehicles_2025 = ev_vehicles[ev_vehicles["Year"] == 2025]
-ev_chargers_2025 = ev_chargers[ev_chargers["Year"] == 2025]
+# Standardize columns
+zev_vehicles = zev_vehicles.rename(columns={"ZIP": "zip"})
+zev_stations = zev_stations.rename(columns={"ZIP": "zip"})
 
 
-# Count per zip code
+# Clean ZIP codes
+zev_vehicles["zip"] = zev_vehicles["zip"].astype(str).str.strip().str[:5]
+zev_stations["zip"] = zev_stations["zip"].astype(str).str.strip().str[:5]
 
-vehicles_per_zip = (
-    ev_vehicles_2025
-    .groupby("zip")
-    .size()
-    .reset_index(name="num_vehicles")
+
+# Convert Year
+zev_vehicles["Year"] = pd.to_numeric(zev_vehicles["Year"], errors="coerce")
+zev_stations["Year"] = pd.to_numeric(zev_stations["Year"], errors="coerce")
+
+
+# Filter 2025
+vehicles_2025 = zev_vehicles[zev_vehicles["Year"] == 2025]
+stations_2025 = zev_stations[zev_stations["Year"] == 2025]
+
+
+# Split Fuel Type
+
+ev_vehicles = vehicles_2025[vehicles_2025["fuel"] == "Electric"]
+
+hydrogen_vehicles = vehicles_2025[vehicles_2025["fuel"] == "Hydrogen"]
+
+
+# Aggretgate Vehicles 
+
+ev_vehicle_zip = (
+    ev_vehicles.groupby("zip")["vehicles"]
+    .sum()
+    .reset_index(name="num_ev_vehicles")
 )
 
-chargers_per_zip = (
-    ev_chargers_2025
-    .groupby("zip")
-    .size()
-    .reset_index(name="num_chargers")
-)
-
-
-# Merge (Outer Join)
-
-ca_data = pd.merge(
-    vehicles_per_zip,
-    chargers_per_zip,
-    on="zip",
-    how="outer",
-    indicator=True
+h2_vehicle_zip = (
+    hydrogen_vehicles.groupby("zip")["vehicles"]
+    .sum()
+    .reset_index(name="num_h2_vehicles")
 )
 
 
-# Fill the missing values
+# Stations
 
-ca_data = ca_data.fillna(0)
+ev_stations = stations_2025[stations_2025["Fuel Type Code"] == "Electric"]
+h2_stations = stations_2025[stations_2025["Fuel Type Code"] == "Hydrogen"]
 
 
-# Calculate the Ratio
+ev_station_zip = ev_stations.groupby("zip").size().reset_index(name="num_ev_stations")
+h2_station_zip = h2_stations.groupby("zip").size().reset_index(name="num_h2_stations")
 
-ca_data["vehicles_per_charger"] = ca_data.apply(
-    lambda r: r["num_vehicles"] / r["num_chargers"]
-    if r["num_chargers"] > 0 else None,
-    axis=1
+
+# Merge and Ratio Function
+
+def merge_and_ratio(v, s, vcol, scol, ratio_col):
+    df = pd.merge(v, s, on="zip", how="outer").fillna(0)
+
+    df[ratio_col] = df.apply(
+        lambda r: r[vcol] / r[scol] if r[scol] > 0 else None,
+        axis=1
+    )
+    return df
+
+
+ev_results = merge_and_ratio(
+    ev_vehicle_zip, ev_station_zip,
+    "num_ev_vehicles", "num_ev_stations",
+    "ev_vehicles_per_station"
+)
+
+h2_results = merge_and_ratio(
+    h2_vehicle_zip, h2_station_zip,
+    "num_h2_vehicles", "num_h2_stations",
+    "h2_vehicles_per_station"
 )
 
 
-# FLAG VALID ZIP RANGE (like NY example)
+# Save Outputs
+
+ev_results.to_csv("ev_2025_zip_analysis.csv", index=False)
+h2_results.to_csv("hydrogen_2025_zip_analysis.csv", index=False)
 
 
-
-ca_data["valid_zip"] = 1  # placeholder
-
-
-# Save the output
-
-ca_data.to_csv("ev_charger_ratio_2025.csv", index=False)
-
-
-# Print a Summary 
-
-print("\nFinal dataset:\n", ca_data.head())
-print("\nTotal ZIPs:", len(ca_data))
-print("\nNon-matching rows (from merge indicator):")
-print(ca_data["_merge"].value_counts())
+print(ev_results.head())
+print(h2_results.head())
