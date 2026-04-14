@@ -1,7 +1,7 @@
 
 """ 
 Zero Emission Vehicles Charger Analysis
-Input: ca_stations_2020_2025.csv
+Input: stations_2020_2025.csv
 Output: 
 
 """ 
