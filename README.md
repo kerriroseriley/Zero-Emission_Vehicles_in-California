@@ -86,7 +86,7 @@ stat_analysis.py:
 ![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
 
 1. Growth of Electric Battery Vehicle Registrations 2020-2025
-![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/013727707f431e2d66d42bd0d8a4c5f466f0d74c/outputs/bev_growth.png)
+![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8e0c980ebed9b70a630a3ba5d80978c5b1faff2f/outputs/bev_growth.png)
 
 1. Growth of Hydrogen Fuel Cell  Vehicle Registrations 2020-2025
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/013727707f431e2d66d42bd0d8a4c5f466f0d74c/outputs/h2_growth.png)
