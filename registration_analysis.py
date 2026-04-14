@@ -24,7 +24,7 @@ df["zip"] = df["zip"].astype(str).str.strip()
 df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
 df = df.dropna(subset=["Year"])
 
-df["Year"] = df["Year"].astype(int)
+df["Year"] = df["Year"].round().astype(int)
 
 df["vehicles"] = pd.to_numeric(df["vehicles"], errors="coerce").fillna(0)
 
