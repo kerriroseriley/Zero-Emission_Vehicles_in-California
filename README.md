@@ -77,7 +77,7 @@ stat_analysis.py:
 
 1. Top 10 Zip Codes by ZEV Charger Count in 2025
 
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Stations in 2025]()
+![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/59263a238b35daf4f09f75a48411d9eb385746e3/outputs/top10_zip_charger_stations.png)
 
 
 1.  Cumulative ZEV Registration Growth 2020 through 2025
