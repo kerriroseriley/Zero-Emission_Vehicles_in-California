@@ -62,10 +62,15 @@ stat_filter.py:
 
 
 stat_analysis.py:
+ + Bar chart showing top 10 zip codes for charger station counts and types
 
- + Bar chart showing top 10 zip codes for charger station counts
-+ Spatial Analysis
-    + Heat map showing growth of charger stations over time (2020-2025)
+ 
+merged.py
+ +merge station data and vehicle registration data into one CSV for analysis 
+
+merged_analysis.py
+ + Spatial Analysis
+    + Heat map showing ratio of number of registered vehicles to stations by type in 2025 by Zip Code
  
 
 
