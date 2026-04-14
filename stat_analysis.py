@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 
 # Load data
-df = pd.read_csv("ca_stations_2020_2025.csv")
+df = pd.read_csv("stations_2020_2025.csv")
 
 
 # Clean columns

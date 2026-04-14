@@ -12,7 +12,6 @@ files = [
     "ZEVs_2023.csv",
     "ZEVs_2024.csv",
     "ZEVs_2025.csv",
-    "ZEVs_2026.csv"
 ] 
 
 # Correct fuel types
