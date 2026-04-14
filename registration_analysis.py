@@ -1,73 +1,142 @@
+"""
+Zero Emissions Vehicle Registrations Analysis
+Input: ZEVs_filtered.csv
+Output: growth + ZIP plots
+""" 
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Load data
+# -----------------------------
+# Load Data
+# -----------------------------
 df = pd.read_csv("ZEVs_filtered.csv")
 
+# -----------------------------
+# Clean Data
+# -----------------------------
+df.columns = df.columns.str.strip()
+
+df["fuel"] = (
+    df["fuel"]
+    .astype(str)
+    .str.strip()
+)
+
+df["zip"] = df["zip"].astype(str).str.strip()
+
+df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
+df = df.dropna(subset=["Year"])
+
 df["Year"] = df["Year"].astype(int)
+
 df["vehicles"] = pd.to_numeric(df["vehicles"], errors="coerce").fillna(0)
 
-# ----------------------------------------------------
-# FINDING 1: REGISTRATION GROWTH OVER TIME
-# ----------------------------------------------------
+# ====================================================
+# FINDING 1: YEARLY REGISTRATION GROWTH
+# ====================================================
 
-yearly = df.groupby(["Year", "fuel"])["vehicles"].sum().reset_index()
+growth = df.groupby(["Year", "fuel"])["vehicles"].sum().unstack(fill_value=0)
+growth = growth.sort_index()
 
-bev_growth = yearly[yearly["fuel"] == "Battery Electric"].sort_values("Year")
-h2_growth = yearly[yearly["fuel"] == "Hydrogen Fuel Cell"].sort_values("Year")
+# Ensure both columns exist
+if "Battery Electric" not in growth.columns:
+    growth["Battery Electric"] = 0
 
+if "Hydrogen Fuel Cell" not in growth.columns:
+    growth["Hydrogen Fuel Cell"] = 0
+
+# -----------------------------
 # BEV Growth Plot
+# -----------------------------
 plt.figure(figsize=(8,5))
-plt.plot(bev_growth["Year"], bev_growth["vehicles"], marker="o", color="green")
-plt.title("Finding 1A: Battery Electric Vehicle Growth (2020–2025)")
+
+plt.plot(
+    growth.index,
+    growth["Battery Electric"],
+    marker="o",
+    color="green"
+)
+
+plt.title("Battery Electric Vehicle Growth (2020–2025)")
 plt.xlabel("Year")
-plt.ylabel("Registrations")
-plt.grid(True)
+plt.ylabel("Number of Registrations")
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig("outputs/bev_growth.png", dpi=300)
 plt.show()
 
+
+# -----------------------------
 # Hydrogen Growth Plot
+# -----------------------------
 plt.figure(figsize=(8,5))
-plt.plot(h2_growth["Year"], h2_growth["vehicles"], marker="o", color="blue")
-plt.title("Finding 1B: Hydrogen Fuel Cell Growth (2020–2025)")
+
+plt.plot(
+    growth.index,
+    growth["Hydrogen Fuel Cell"],
+    marker="o",
+    color="blue"
+)
+
+plt.title("Hydrogen Fuel Cell Vehicle Growth (2020–2025)")
 plt.xlabel("Year")
-plt.ylabel("Registrations")
-plt.grid(True)
+plt.ylabel("Number of Registrations")
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig("outputs/h2_growth.png", dpi=300)
 plt.show()
 
 
-# ----------------------------------------------------
-# FINDING 2: TOP ZIP CODES (GEOGRAPHIC CONCENTRATION)
-# ----------------------------------------------------
+# ====================================================
+# FINDING 2: TOP ZIP CODE DISTRIBUTION
+# ====================================================
 
-zip_totals = df.groupby(["zip", "fuel"])["vehicles"].sum().reset_index()
+zip_counts = df.groupby(["zip", "fuel"])["vehicles"].sum().reset_index()
 
+# -----------------------------
+# BEV ZIP TOP 10
+# -----------------------------
 bev_zip = (
-    zip_totals[zip_totals["fuel"] == "Battery Electric"]
+    zip_counts[zip_counts["fuel"] == "Battery Electric"]
     .sort_values("vehicles", ascending=False)
     .head(10)
 )
 
-h2_zip = (
-    zip_totals[zip_totals["fuel"] == "Hydrogen Fuel Cell"]
-    .sort_values("vehicles", ascending=False)
-    .head(10)
-)
-
-# BEV ZIP Plot
 plt.figure(figsize=(8,5))
 plt.bar(bev_zip["zip"], bev_zip["vehicles"], color="green")
-plt.title("Finding 2A: Top 10 ZIP Codes - Battery Electric Vehicles")
+
+plt.title("Top 10 ZIP Codes - Battery Electric Vehicles")
 plt.xlabel("ZIP Code")
-plt.ylabel("Registrations")
+plt.ylabel("Number of Registrations")
 plt.xticks(rotation=45)
+plt.grid(axis="y", alpha=0.3)
+
+plt.tight_layout()
+plt.savefig("outputs/bev_zip_top10.png", dpi=300)
 plt.show()
 
-# Hydrogen ZIP Plot
+
+# -----------------------------
+# HYDROGEN ZIP TOP 10
+# -----------------------------
+h2_zip = (
+    zip_counts[zip_counts["fuel"] == "Hydrogen Fuel Cell"]
+    .sort_values("vehicles", ascending=False)
+    .head(10)
+)
+
 plt.figure(figsize=(8,5))
 plt.bar(h2_zip["zip"], h2_zip["vehicles"], color="blue")
-plt.title("Finding 2B: Top 10 ZIP Codes - Hydrogen Fuel Cell Vehicles")
-plt.xlabel("ZIP Code")
-plt.ylabel("Registrations")
-plt.xticks(rotation=45)
-plt.show()
 
+plt.title("Top 10 ZIP Codes - Hydrogen Fuel Cell Vehicles")
+plt.xlabel("ZIP Code")
+plt.ylabel("Number of Registrations")
+plt.xticks(rotation=45)
+plt.grid(axis="y", alpha=0.3)
+
+plt.tight_layout()
+plt.savefig("outputs/h2_zip_top10.png", dpi=300)
+plt.show()
