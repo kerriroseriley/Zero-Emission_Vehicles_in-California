@@ -5,7 +5,7 @@ Input: stations_2020_2025.csv
 Output: 
 
 """ 
-import pandas as pd
+import pandas as pd 
 import matplotlib.pyplot as plt 
 
 # Load data
@@ -14,16 +14,16 @@ df = pd.read_csv("stations_2020_2025.csv")
 
 # Clean columns
 df.columns = df.columns.str.strip()
-df["zip"] = df["zip"].astype(str).str.strip()
+df["ZIP"] = df["ZIP"].astype(str).str.strip()
 
  
 # -Split by Fuel Type
-df_elec = df[df["fuel_type"] == "ELEC"]
-df_hy = df[df["fuel_type"] == "HY"]
+df_elec = df[df["Fuel Type Code"] == "ELEC"]
+df_hy = df[df["Fuel Type Code"] == "HY"]
 
 # Top 10 Zip Codes for Each
-elec_top10 = df_elec["zip"].value_counts().head(10).sort_values()
-hy_top10 = df_hy["zip"].value_counts().head(10).sort_values()
+elec_top10 = df_elec["ZIP"].value_counts().head(10).sort_values()
+hy_top10 = df_hy["ZIP"].value_counts().head(10).sort_values()
 
 # Plot
 plt.figure(figsize=(14,6))
