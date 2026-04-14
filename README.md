@@ -68,7 +68,10 @@ stat_analysis.py:
 Infrastructure Analysis
 
 merged.py
- + merge station data and vehicle registration data into one CSV for analysis 
+ + Loads two datasets (ZEV vehicles and fueling stations), standardizes ZIP code formats, and keeps only 2025 data for analysis.
+ + Splits vehicles into battery electric and hydrogen fuel cell categories, and separates stations into EV (ELEC) and hydrogen (HY) types.
+ + Aggregates totals by ZIP code: sums vehicles per type and counts stations per type in each ZIP.
+ + Merges vehicle and station data per ZIP and computes “vehicles per station” ratios, then saves the results to CSV files.
  
 
 
