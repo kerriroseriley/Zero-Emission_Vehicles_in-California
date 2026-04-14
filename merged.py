@@ -1,4 +1,7 @@
-import pandas as pd
+
+
+# import modules
+import pandas as pd 
 
 pd.options.mode.copy_on_write = True
 
@@ -19,13 +22,12 @@ zev_stations["zip"] = zev_stations["zip"].astype(str).str.strip().str[:5]
 
 
 # Convert Year
-zev_vehicles["Year"] = pd.to_numeric(zev_vehicles["Year"], errors="coerce")
-zev_stations["Year"] = pd.to_numeric(zev_stations["Year"], errors="coerce")
+zev_vehicles["Year"] = zev_vehicles["Year"].astype(str).str.strip()
+zev_stations["Year"] = zev_stations["Year"].astype(str).str.strip()
 
+vehicles_2025 = zev_vehicles[zev_vehicles["Year"] == "2025"]
+stations_2025 = zev_stations[zev_stations["Year"] == "2025"]
 
-# Filter 2025
-vehicles_2025 = zev_vehicles[zev_vehicles["Year"] == 2025]
-stations_2025 = zev_stations[zev_stations["Year"] == 2025]
 
 
 # Split Fuel Type
