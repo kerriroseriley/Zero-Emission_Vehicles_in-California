@@ -5,6 +5,8 @@ Input: stations_2020_2025.csv
 Output: 
 
 """ 
+# import necessary modules
+import os
 import pandas as pd 
 import matplotlib.pyplot as plt 
 
@@ -52,4 +54,39 @@ plt.tight_layout()
 plt.savefig("outputs/top10_zip_charger_stations.png", dpi=300, bbox_inches="tight")
 
 plt.show()
+
+# CUMULATIVE GROWTH TREND
+# --- Group by Year and Fuel Type ---
+trend = df.groupby(["Year", "Fuel Type Code"]).size().unstack(fill_value=0)
+
+# Ensure both columns exist (in case HY is sparse)
+for col in ["ELEC", "HY"]:
+    if col not in trend.columns:
+        trend[col] = 0
+
+trend = trend.sort_index()
+
+# --- Plot ---
+plt.figure(figsize=(10,6))
+
+plt.plot(trend.index, trend["ELEC"], marker="o", label="Electric", color="blue")
+plt.plot(trend.index, trend["HY"], marker="o", label="Hydrogen", color="green")
+
+plt.title("Growth of Zero Emission Fuel Stations in California (2020–2025)")
+plt.xlabel("Year")
+plt.ylabel("Number of Stations")
+plt.legend()
+plt.grid(True)
+
+# --- Save output ---
+output_dir = "outputs"
+os.makedirs(output_dir, exist_ok=True)
+
+plt.savefig(os.path.join(output_dir, "fuel_type_growth_trends.png"),
+            dpi=300, bbox_inches="tight")
+
+plt.show()
+
+
+
 
