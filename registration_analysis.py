@@ -40,7 +40,7 @@ if "Battery Electric" not in growth.columns:
 
 if "Hydrogen Fuel Cell" not in growth.columns:
     growth["Hydrogen Fuel Cell"] = 0
-
+ 
 # Electrive Vehicle Growth
 plt.figure(figsize=(8,5))
 
@@ -50,7 +50,8 @@ plt.plot(
     marker="o",
     color="green"
 )
-
+# Force whole-number years on axis
+plt.xticks(growth.index)
 plt.title("Battery Electric Vehicle Growth (2020–2025)")
 plt.xlabel("Year")
 plt.ylabel("Number of Registrations")
@@ -70,7 +71,8 @@ plt.plot(
     marker="o",
     color="blue"
 )
-
+# Force whole-number years on axis
+plt.xticks(growth.index)
 plt.title("Hydrogen Fuel Cell Vehicle Growth (2020–2025)")
 plt.xlabel("Year")
 plt.ylabel("Number of Registrations")
