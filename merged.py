@@ -32,10 +32,13 @@ stations_2025 = zev_stations[zev_stations["Year"] == "2025"]
 
 # Split Fuel Type
 
-ev_vehicles = vehicles_2025[vehicles_2025["fuel"] == "Electric"]
+ev_vehicles = vehicles_2025[
+    vehicles_2025["fuel"].str.contains("Battery Electric", case=False, na=False)
+]
 
-hydrogen_vehicles = vehicles_2025[vehicles_2025["fuel"] == "Hydrogen"]
-
+hydrogen_vehicles = vehicles_2025[
+    vehicles_2025["fuel"].str.contains("Hydrogen Fuel Cell", case=False, na=False)
+] 
 
 # Aggretgate Vehicles 
 
@@ -54,8 +57,8 @@ h2_vehicle_zip = (
 
 # Stations
 
-ev_stations = stations_2025[stations_2025["Fuel Type Code"] == "Electric"]
-h2_stations = stations_2025[stations_2025["Fuel Type Code"] == "Hydrogen"]
+ev_stations = stations_2025[stations_2025["Fuel Type Code"] == "ELEC"]
+h2_stations = stations_2025[stations_2025["Fuel Type Code"] == "HY"]
 
 
 ev_station_zip = ev_stations.groupby("zip").size().reset_index(name="num_ev_stations")
