@@ -24,7 +24,7 @@ This analysis shows the growth of Zero Emission Vehicles (ZEVs) registration and
 + Obtained from the US Department of Energy: Alternative Fuels Data Center
 + Data Source: [Department of Energy Alternative Fuel Data](https://afdc.energy.gov/data_download)
 + Data shows all alternative fuel stations. Isolate this down to electric battery and hydrogran charging stations only. These are the Zero Emissions Vehicles.
-+ Includes station fuel type, state, zip code, and geographic coordinates (longitude and latitude).
++ Includes station fuel type, state, and zip code, and variable created for the year.
 
 ### Geographic Boundary Data
 + Obtained from US Census Bureau's 2025 TIGER/Line Shapefiles
@@ -92,7 +92,9 @@ stat_analysis.py:
 1. Growth of Hydrogen Fuel Cell  Vehicle Registrations 2020-2025
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/84e18c6905bc00449dae3d2ec0b0f7ab9f917383/outputs/h2_growth.png)
 
+1. 
 
+1. 
 
 ## Conclusion and Recommendations
 
