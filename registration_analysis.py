@@ -75,7 +75,7 @@ plt.tight_layout()
 
 # SAVE IMAGE
 
-plt.savefig("zipcode_registration.png", dpi=300, bbox_inches="tight")
+plt.savefig("outputs/zipcode_registration.png", dpi=300, bbox_inches="tight")
 
 plt.show()
 
@@ -121,7 +121,7 @@ for x, y in zip(cumulative_total.index, cumulative_total.values):
     plt.text(x, y, f"{int(y)}", ha="center", va="bottom")
 
 plt.tight_layout()
-plt.savefig("zev_growth_trend.png", dpi=300, bbox_inches="tight")
+plt.savefig("outputs/zev_growth_trend.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # HEATMAP FOR QGIZ SHOWING Distribution of ZEV Registrations by Zip Code and Year (%)
@@ -161,7 +161,7 @@ qgis_df["Year"] = qgis_df["Year"].astype(int)
 qgis_df["zip"] = qgis_df["zip"].astype(str)
 
 # Save file for QGIS
-qgis_df.to_csv("zev_qgis_heatmap.csv", index=False)
+qgis_df.to_csv("outputs/zev_qgis_heatmap.csv", index=False)
 
 print("QGIS file created: registration_qgis_heatmap.csv")
 
