@@ -70,20 +70,20 @@ stat_analysis.py:
 
 ## Visualizations: Maps and Plots
 
-1. Top 10 Zip Codes of Electric Registrations in 2025
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Registrations in 2025]()
+1. Top 10 Zip Codes of Electric Vehicle Registrations in 2025
+![Top 10 Zip Codes of Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/1254581935ee8f4fb509a7b8b9aa3c7bb0783991/outputs/bev_growth.png)
 
 
 1. Top 10 Zip Codes of Hydrogen Registrations in 2025
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/48de6889cd379696a96a97ee7b60659a6a1737e2/outputs/zipcode_registration.png)
+![Top 10 Zip Codes of Fuel Hydrogren Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/1254581935ee8f4fb509a7b8b9aa3c7bb0783991/outputs/h2_growth.png)
 
 
 1. Top 10 Zip Codes by Electric Vehicle Charger Count in 2025
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/59263a238b35daf4f09f75a48411d9eb385746e3/outputs/top10_zip_charger_stations.png)
+![Top 10 Zip Codes of Electric Battery Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/1254581935ee8f4fb509a7b8b9aa3c7bb0783991/outputs/elec_growth.png)
 
 
 1. Top 10 Zip Codes by Hydrogen Vehicle Charger Count in 2025
-![Top 10 Zip Codes of Fuel Hydrogran Cell and Electric Battery Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/59263a238b35daf4f09f75a48411d9eb385746e3/outputs/top10_zip_charger_stations.png)
+![Top 10 Zip Codes of Fuel Hydrogren CellVehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/1254581935ee8f4fb509a7b8b9aa3c7bb0783991/outputs/hy_growth.png)
 
 
 1.  Cumulative ZEV Registration Growth 2020 through 2025
