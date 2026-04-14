@@ -65,6 +65,8 @@ stat_analysis.py:
  + Bar chart showing top 10 zip codes for charger station counts and types
 
  
+Infrastructure Analysis
+
 merged.py
  +merge station data and vehicle registration data into one CSV for analysis 
 
