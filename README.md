@@ -3,7 +3,8 @@
 #### By Kerri Riley 
 
 
-## Purpose of the Analysis
+Battery Electric Vehicles and Hydrogen Fuel Cell Vehicles are considered zero emission vehicles (ZEVs) as they have no smog-related or Green House Gases (GHG) tailpipe emissions. 
+
 In 2012, The California Air Resource Board (CARB) adopted the Advanced Clean Car I to control motor vehicle emissions through 2025. In 2022, the Advanced Clean Cars II regulations established the next phase which would begin with the 2026 vehicle model year. This included having 100% of new passenger vehicle sales to meet zero emission standards by 2035. 
 This analysis shows the growth of Zero Emission Vehicles (ZEVs) registration and charging stations in the State of California from 2020 to 2025. It examines the infrastructure gaps that may affect owners of ZEVs. 
 
@@ -103,6 +104,7 @@ stat_analysis.py:
 ## References
 “Advanced Clean Cars.” Advanced Clean Cars, ww2.arb.ca.gov/our-work/programs/drive-forward-light-duty-vehicle-program/advanced-clean-cars. Accessed 11 Apr. 2026. 
 
+“Hydrogen in Transportation.” EPA, Environmental Protection Agency, www.epa.gov/greenvehicles/hydrogen-transportation. Accessed 14 Apr. 2026. 
 
 
 
