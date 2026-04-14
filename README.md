@@ -85,9 +85,12 @@ stat_analysis.py:
 ![Cumulative ZEV Registration Growth 2020 through 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/56c73c0e5f3dcbeb6bfd3c38690d9fdf610b304b/outputs/zev_growth_trend.png)
 
 
-1. Number of Zero Emission Vehicle Chargers Opening in California 2020-2025 by Fuel Type
-Graph
+1. Number of Electric Vehicle Chargers in California 2020-2025
+![Electric Station Growth 2020 through 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8a169d8ea3b21b7d4d0e35ce0cceb94952baefcc/outputs/elec_growth.png)
 
+
+1. Number of Hydrogen Fuel Cell Chargers in California 2020-2025 
+![Hydrogen Fuel Cell Station Growth 2020 through 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8a169d8ea3b21b7d4d0e35ce0cceb94952baefcc/outputs/hy_growth.png)
 
 1. Number of Zero Emission Vehicles (Hydrogran Fuel Cell and Electric Battery) in California 2020-2025 by Zip Code
 Heatmap
