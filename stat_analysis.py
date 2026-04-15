@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Reads the combined charger station dataset
-df = pd.read_csv("stations_2020_2025.csv")
+df = pd.read_csv("outputs/stations_2020_2025.csv")
 
 # Clean Columns by removing whitespace from column names 
 df.columns = df.columns.str.strip()

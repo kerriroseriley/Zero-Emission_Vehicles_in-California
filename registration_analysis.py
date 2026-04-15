@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the data - Reads cleaned dataset into a DataFrame
-df = pd.read_csv("ZEVs_filtered.csv")
+df = pd.read_csv("outputs/ZEVs_filtered.csv")
 
 # Clean the data by removing extra spaces from column names
 df.columns = df.columns.str.strip()

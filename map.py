@@ -19,7 +19,7 @@ import geopandas as gpd
 # 1. Load EV + H2 data
 # -----------------------------
 ev = pd.read_csv("outputs/ELEC_ratio.csv")
-h2 = pd.read_csv("outputs/HY_ratio.csv")
+h2 = pd.read_csv("outputs/HY_ratio.csv") 
 
 # Standardize ZIPs (robust)
 ev["zip"] = ev["zip"].astype(str).str.extract(r"(\d{5})")[0]
@@ -93,3 +93,9 @@ print(h2_gdf[["zip", "num_h2_vehicles", "num_h2_stations"]].head())
 # -----------------------------
 ev_gdf.to_file("outputs/ELEC_ratio.gpkg", layer="ev_ratio", driver="GPKG")
 h2_gdf.to_file("outputs/HY_ratio.gpkg", layer="h2_ratio", driver="GPKG")
+
+
+print(ev["num_ev_vehicles"].dtype)
+print(ev["num_ev_vehicles"].describe())
+
+print((ev["num_ev_vehicles"] > 0).sum())
