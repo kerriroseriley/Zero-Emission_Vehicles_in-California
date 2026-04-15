@@ -80,7 +80,7 @@ for file in files:
 final_df = pd.concat(filtered_dfs, ignore_index=True)
 
 # Save output
-final_df.to_csv("ZEVs_filtered.csv", index=False)
+final_df.to_csv("outputs/ZEVs_filtered.csv", index=False)
 
 # print total rows and first few rows of data set
 print("Final rows:", len(final_df))

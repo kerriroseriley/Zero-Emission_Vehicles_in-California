@@ -2,7 +2,7 @@
 Merging ZEV Stations and Registrations and Ratio Function
 Inputs: ZEVs_filtered.csv, stations_2020_2025.csv
 Outputs: ELEC_ratio.csv, HY_ratio.csv
-merged.py
+merged.py 
 
 """
 
@@ -103,8 +103,8 @@ h2_results = merge_and_ratio(
 
 
 # Save Outputs to two separate CSV files
-ev_results.to_csv("ELEC_ratio.csv", index=False)
-h2_results.to_csv("HY_ratio.csv", index=False)
+ev_results.to_csv("outputs/ELEC_ratio.csv", index=False)
+h2_results.to_csv("outputs/HY_ratio.csv", index=False)
 
 # Prints first few rows of results
 print(ev_results.head())
