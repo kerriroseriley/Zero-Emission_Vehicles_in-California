@@ -50,7 +50,7 @@ filtered = combined[
 final_df = filtered[["Year", "Fuel Type Code", "ZIP", "Station Name"]]
 
 # Save my output to CSV file
-final_df.to_csv("stations_2020_2025.csv", index=False)
+final_df.to_csv("outputs/stations_2020_2025.csv", index=False)
 
 # Confirms creation of output file
 print("Dataset created: stations_2020_2025.csv")
