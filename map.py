@@ -11,62 +11,85 @@ Inputs:
 Outputs: ELEC_ratio.gpkg, HY_ratio.gpkg
 """
 
-# import modules
+
 import pandas as pd
 import geopandas as gpd
 
-# Load ratio data
-ev = pd.read_csv("outputs/ELEC_ratio.csv", dtype={"zip": str})
-h2 = pd.read_csv("outputs/HY_ratio.csv", dtype={"zip": str})
+# -----------------------------
+# 1. Load EV + H2 data
+# -----------------------------
+ev = pd.read_csv("outputs/ELEC_ratio.csv")
+h2 = pd.read_csv("outputs/HY_ratio.csv")
 
-# Clean ZIP format
-ev["zip"] = ev["zip"].astype(str).str.strip().str[:5]
-h2["zip"] = h2["zip"].astype(str).str.strip().str[:5]
+# Standardize ZIPs (robust)
+ev["zip"] = ev["zip"].astype(str).str.extract(r"(\d{5})")[0]
+h2["zip"] = h2["zip"].astype(str).str.extract(r"(\d{5})")[0]
 
-# Load the shapefiles
+# Drop invalid ZIPs
+ev = ev.dropna(subset=["zip"])
+h2 = h2.dropna(subset=["zip"])
+
+# -----------------------------
+# 2. Load geography
+# -----------------------------
 zcta = gpd.read_file("tl_2025_us_zcta520.zip")
-
-# States layer 
 states = gpd.read_file("tl_2025_us_state.zip")
 
-# Standardize ZIP column
-zcta["zip"] = zcta["ZCTA5CE20"]
-
-# Filter to California
-# FIPS code for California = '06'
+# Ensure CRS match
 ca = states[states["STATEFP"] == "06"]
 
-# Ensure same CRS before spatial operations
 zcta = zcta.to_crs(ca.crs)
 
-# Clip ZIPs to California boundary
+# Clip to California FIRST
 zcta_ca = gpd.clip(zcta, ca)
 
+# Standardize ZIP column
+zcta_ca = zcta_ca.rename(columns={"ZCTA5CE20": "zip"})
+zcta_ca["zip"] = zcta_ca["zip"].astype(str)
 
-# Drop any of the invalid zip codes (PO Boxs)
-valid_zips = set(zcta["zip"])
+# -----------------------------
+# 3. Debug overlap (IMPORTANT)
+# -----------------------------
+print("EV ZIPs:", ev["zip"].nunique())
+print("H2 ZIPs:", h2["zip"].nunique())
+print("CA ZCTAs:", zcta_ca["zip"].nunique())
 
-ev = ev[ev["zip"].isin(valid_zips)]
-h2 = h2[h2["zip"].isin(valid_zips)]
+overlap_ev = set(ev["zip"]) & set(zcta_ca["zip"])
+overlap_h2 = set(h2["zip"]) & set(zcta_ca["zip"])
 
-# Merge with geometry
-ev_gdf = zcta.merge(ev, on="zip", how="inner")
-h2_gdf = zcta.merge(h2, on="zip", how="inner")
+print("EV overlap:", len(overlap_ev))
+print("H2 overlap:", len(overlap_h2))
 
-# Convert to GeoDataFrame explicitly
-ev_gdf = gpd.GeoDataFrame(ev_gdf, geometry="geometry")
-h2_gdf = gpd.GeoDataFrame(h2_gdf, geometry="geometry")
+# -----------------------------
+# 4. Filter to CA ZIPs
+# -----------------------------
+ev_ca = ev[ev["zip"].isin(zcta_ca["zip"])]
+h2_ca = h2[h2["zip"].isin(zcta_ca["zip"])]
 
+print("EV after filter:", len(ev_ca))
+print("H2 after filter:", len(h2_ca))
 
+# -----------------------------
+# 5. Merge correctly
+# -----------------------------
+ev_gdf = zcta_ca.merge(ev_ca, on="zip", how="inner")
+h2_gdf = zcta_ca.merge(h2_ca, on="zip", how="inner")
 
-# Save the geopackage
+# Convert explicitly
+ev_gdf = gpd.GeoDataFrame(ev_gdf, geometry="geometry", crs=zcta_ca.crs)
+h2_gdf = gpd.GeoDataFrame(h2_gdf, geometry="geometry", crs=zcta_ca.crs)
+
+# -----------------------------
+# 6. Final sanity checks
+# -----------------------------
+print("EV merged rows:", len(ev_gdf))
+print("H2 merged rows:", len(h2_gdf))
+
+print(ev_gdf[["zip", "num_ev_vehicles", "num_ev_stations"]].head())
+print(h2_gdf[["zip", "num_h2_vehicles", "num_h2_stations"]].head())
+
+# -----------------------------
+# 7. Save GeoPackages
+# -----------------------------
 ev_gdf.to_file("outputs/ELEC_ratio.gpkg", layer="ev_ratio", driver="GPKG")
 h2_gdf.to_file("outputs/HY_ratio.gpkg", layer="h2_ratio", driver="GPKG")
-
-# Debugging
-print("EV GeoData:")
-print(ev_gdf.head())
-
-print("\nH2 GeoData:")
-print(h2_gdf.head())
-
