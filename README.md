@@ -102,6 +102,8 @@ map.py
 1. Battery Electric Vehicle Registration to Station Ratio
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
 
+1. Hydrogen Fuel Cell Vehicle to Station Ratio
+![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png))
 
 ## Conclusion and Recommendations
 This project shows the trends of ZEVs Vehicle Registrations and the disproportionate growth of Zero Emission charging stations across ZIP codes in the State of California in 2025. Key takeways include the rise of Battery Electric Vehicle registrations, especially 2021-2022, the outpacing infrastructure growth in several ZIP codes. 
