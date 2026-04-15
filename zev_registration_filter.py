@@ -8,9 +8,7 @@ Output:
 
 import pandas as pd
 
-# -----------------------------
-# Input files (yearly datasets)
-# -----------------------------
+# Input files
 files = [
     "inputs/ZEVs_2020.csv",
     "inputs/ZEVs_2021.csv",
@@ -20,16 +18,12 @@ files = [
     "inputs/ZEVs_2025.csv",
 ]
 
-# -----------------------------
 # Fuel types to keep
-# -----------------------------
 keep_fuels = ["Battery Electric", "Hydrogen Fuel Cell"]
 
 filtered_dfs = []
 
-# -----------------------------
 # Process each file
-# -----------------------------
 for file in files:
     df = pd.read_csv(file, low_memory=False)
 
@@ -53,28 +47,21 @@ for file in files:
         print(f"Skipping {file} (missing required columns)")
         continue
 
-    # -----------------------------
-    # 🚨 FIX: assign Year from filename (NO date parsing)
-    # -----------------------------
+    # Assign year from filename
+
     year = file.split("_")[-1].replace(".csv", "")
     df["Year"] = int(year)
 
-    # -----------------------------
-    # Clean ZIP codes
-    # -----------------------------
+    # Clean ZIP Codes
     df["zip"] = df["zip"].astype(str).str.strip().str[:5]
 
     # Remove invalid ZIPs
     df = df[df["zip"].str.upper() != "OOS"]
 
-    # -----------------------------
-    # Clean vehicle counts
-    # -----------------------------
+    # Clean vehicle count
     df["vehicles"] = pd.to_numeric(df["vehicles"], errors="coerce").fillna(0)
 
-    # -----------------------------
-    # Filter fuel types
-    # -----------------------------
+    # Filter fuel type
     df = df[df["fuel"].isin(keep_fuels)]
 
     # Keep only needed columns
@@ -82,19 +69,13 @@ for file in files:
 
     filtered_dfs.append(df)
 
-# -----------------------------
 # Combine all years
-# -----------------------------
 final_df = pd.concat(filtered_dfs, ignore_index=True)
 
-# -----------------------------
 # Save output
-# -----------------------------
 final_df.to_csv("outputs/ZEVs_filtered.csv", index=False)
 
-# -----------------------------
 # Debug output
-# -----------------------------
 print("Final rows:", len(final_df))
 print(final_df.head())
 

@@ -39,7 +39,7 @@ zcta = zcta.to_crs(ca.crs)
 # Clip ZIPS to California 
 zcta_ca = gpd.clip(zcta, ca)
 
-# Standardize ZIP column
+# Standardize ZIP column 
 zcta_ca = zcta_ca.rename(columns={"ZCTA5CE20": "zip"})
 zcta_ca["zip"] = zcta_ca["zip"].astype(str)
  
