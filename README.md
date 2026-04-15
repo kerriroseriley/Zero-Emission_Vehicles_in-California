@@ -104,8 +104,7 @@ map.py
 
 
 ## Conclusion and Recommendations
-
-
+This project shows the trends of ZEVs Vehicle Registrations and the disproportionate growth of Zero Emission charging stations across ZIP codes in the State of California in 2025. Key takeways include the rise of Battery Electric Vehicle registrations, especially 2021-2022, the outpacing infrastructure growth in several ZIP codes. 
 
 
 
