@@ -4,43 +4,32 @@ Inputs: ZEVs_filtered.csv, stations_2020_2025.csv
 Outputs: ELEC_ratio.csv, HY_ratio.csv
 """
 
+# Import modules
 import pandas as pd
 
-# -----------------------------
-# Load data
-# -----------------------------
+# Load the data
 zev_vehicles = pd.read_csv("outputs/ZEVs_filtered.csv", dtype={"zip": str})
 zev_stations = pd.read_csv("outputs/stations_2020_2025.csv", dtype={"ZIP": str})
 
-# -----------------------------
-# Standardize column names
-# -----------------------------
+# Standardize the column names
 zev_vehicles = zev_vehicles.rename(columns={"ZIP": "zip"})
 zev_stations = zev_stations.rename(columns={"ZIP": "zip"})
 
-# -----------------------------
-# Clean ZIP codes
-# -----------------------------
+# Clean the ZIP codes
 zev_vehicles["zip"] = zev_vehicles["zip"].astype(str).str.strip().str[:5]
 zev_stations["zip"] = zev_stations["zip"].astype(str).str.strip().str[:5]
 
-# -----------------------------
-# Clean numeric fields (IMPORTANT)
-# -----------------------------
+# Clean the numeric fields
 zev_vehicles["vehicles"] = pd.to_numeric(zev_vehicles["vehicles"], errors="coerce")
 
-# -----------------------------
-# Filter to year 2025
-# -----------------------------
+# Filter to the Year 2025
 zev_vehicles["Year"] = zev_vehicles["Year"].astype(str).str.strip()
 zev_stations["Year"] = zev_stations["Year"].astype(str).str.strip()
 
 vehicles_2025 = zev_vehicles[zev_vehicles["Year"] == "2025"]
 stations_2025 = zev_stations[zev_stations["Year"] == "2025"]
 
-# -----------------------------
-# Split fuel types
-# -----------------------------
+# Split the fuel types
 ev_vehicles = vehicles_2025[
     vehicles_2025["fuel"].str.contains("Battery Electric", case=False, na=False)
 ]
@@ -49,9 +38,7 @@ hydrogen_vehicles = vehicles_2025[
     vehicles_2025["fuel"].str.contains("Hydrogen Fuel Cell", case=False, na=False)
 ]
 
-# -----------------------------
 # ZIP-level vehicle data (NO SUM because already aggregated)
-# -----------------------------
 ev_vehicle_zip = (
     ev_vehicles
     .groupby("zip", as_index=False)
@@ -66,9 +53,8 @@ h2_vehicle_zip = (
     .rename(columns={"vehicles": "num_h2_vehicles"})
 )
 
-# -----------------------------
+
 # Station counts per ZIP
-# -----------------------------
 ev_stations = stations_2025[stations_2025["Fuel Type Code"] == "ELEC"]
 h2_stations = stations_2025[stations_2025["Fuel Type Code"] == "HY"]
 
@@ -84,9 +70,8 @@ h2_station_zip = (
     .reset_index(name="num_h2_stations")
 )
 
-# -----------------------------
-# Merge + ratio (safe version)
-# -----------------------------
+
+# Merge + rati Function
 def merge_and_ratio(v, s, vcol, scol, ratio_col):
     df = pd.merge(v, s, on="zip", how="outer")
 
@@ -101,9 +86,7 @@ def merge_and_ratio(v, s, vcol, scol, ratio_col):
 
     return df
 
-# -----------------------------
-# Apply function
-# -----------------------------
+# Apply the function
 ev_results = merge_and_ratio(
     ev_vehicle_zip,
     ev_station_zip,
@@ -120,15 +103,11 @@ h2_results = merge_and_ratio(
     "h2_vehicles_per_station"
 )
 
-# -----------------------------
 # Save outputs
-# -----------------------------
 ev_results.to_csv("outputs/ELEC_ratio.csv", index=False)
 h2_results.to_csv("outputs/HY_ratio.csv", index=False)
 
-# -----------------------------
-# Debug prints
-# -----------------------------
+# Debug
 print("EV preview:")
 print(ev_results.head())
 
