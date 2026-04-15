@@ -1,7 +1,7 @@
 """
 Zero Emissions Vehicle Registrations Analysis
 Input: ZEVs_filtered.csv
-Output: growth + ZIP plots
+Output: 
 """ 
 
 # import  modules

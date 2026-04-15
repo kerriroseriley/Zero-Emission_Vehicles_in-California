@@ -1,6 +1,6 @@
 """
-Zero Emissions Vehicles Charger Stations - DATA BUILD STEP
-Input: stat_20.csv ... stat_25.csv
+Filtering Zero Emissions Vehicles Charger Stations 
+Input: stat_20.csv, stat_21.csv, stat_22.csv, stat_23.csv, stat_24.csv, stat_25.csv
 Output: stations_2020_2025.csv
 """
 

@@ -1,4 +1,7 @@
 """
+Merging ZEV Stations and Registrations and Ratio Function
+Inputs: ZEVs_filtered.csv, stations_2020_2025.csv
+Outputs: ELEC_ratio.csv, HY_ratio.csv
 merged.py
 
 """
@@ -6,7 +9,7 @@ merged.py
 # import modules
 import pandas as pd 
 
-# Enables pandas copt-on-write mode 
+# Enables pandas copy-on-write mode 
 pd.options.mode.copy_on_write = True
 
 

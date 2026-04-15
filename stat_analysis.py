@@ -1,7 +1,8 @@
 """
 Zero Emissions Vehicles Charger Stations Analysis
 Input: stations_2020_2025.csv
-Output: plots
+Output:
+    
 """ 
 # import modules
 import pandas as pd

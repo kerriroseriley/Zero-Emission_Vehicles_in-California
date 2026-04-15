@@ -1,5 +1,6 @@
 """
 Filter Zero Emission Vehicles Registration
+Inputs: 
 Output: ZEVs_filtered.csv
 """
 
