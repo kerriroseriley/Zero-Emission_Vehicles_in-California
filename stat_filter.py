@@ -9,12 +9,12 @@ import pandas as pd
 
 # Input files
 files = {
-    "stat_20.csv": 2020,
-    "stat_21.csv": 2021,
-    "stat_22.csv": 2022,
-    "stat_23.csv": 2023,
-    "stat_24.csv": 2024,
-    "stat_25.csv": 2025
+    "inputs/stat_20.csv": 2020,
+    "inputs/stat_21.csv": 2021,
+    "inputs/stat_22.csv": 2022,
+    "inputs/stat_23.csv": 2023,
+    "inputs/stat_24.csv": 2024,
+    "inputs/stat_25.csv": 2025
 }
 
 # Empty list to store yearly DataFrames

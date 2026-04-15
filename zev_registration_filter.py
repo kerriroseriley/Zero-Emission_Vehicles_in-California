@@ -9,12 +9,12 @@ import pandas as pd
 
 # List of CSV files that will be processed year to year
 files = [
-    "ZEVs_2020.csv",
-    "ZEVs_2021.csv",
-    "ZEVs_2022.csv",
-    "ZEVs_2023.csv",
-    "ZEVs_2024.csv",
-    "ZEVs_2025.csv",
+    "inputs/ZEVs_2020.csv",
+    "inputs/ZEVs_2021.csv",
+    "inputs/ZEVs_2022.csv",
+    "inputs/ZEVs_2023.csv",
+    "inputs/ZEVs_2024.csv",
+    "inputs/ZEVs_2025.csv",
 ] 
 
 # Correct fuel types - Defines which fuel types should be kept in data set
