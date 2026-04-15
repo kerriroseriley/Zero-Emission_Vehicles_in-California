@@ -100,7 +100,7 @@ map.py
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/84e18c6905bc00449dae3d2ec0b0f7ab9f917383/outputs/h2_growth.png)
 
 1. Battery Electric Vehicle Registration to Station Ratio
-![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png))
+![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
 
 
 ## Conclusion and Recommendations
