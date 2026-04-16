@@ -139,7 +139,7 @@ plt.figure(figsize=(8,5))
 plt.bar(bev_zip["zip"], bev_zip["vehicles"], color="green")
 
 # Set chart title
-plt.title("Top 10 ZIP Codes - Battery Electric Vehicles")
+plt.title("Battery Electric Vehicles Registrations in California by Zip Code (2025)")
 # Label x-axis
 plt.xlabel("ZIP Code")
 # Label y-axis
@@ -172,7 +172,7 @@ plt.figure(figsize=(8,5))
 plt.bar(h2_zip["zip"], h2_zip["vehicles"], color="blue")
 
 # chart title
-plt.title("Top 10 ZIP Codes - Hydrogen Fuel Cell Vehicles")
+plt.title("Hydrogen Fuel Cell Vehicles Registrations in California by ZIP Code (2025)")
 # Label x-axis
 plt.xlabel("ZIP Code")
 # Label y-axis

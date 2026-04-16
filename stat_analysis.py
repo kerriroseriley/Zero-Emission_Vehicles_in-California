@@ -62,7 +62,7 @@ plt.plot(
     color="blue"
 )
 # Chart title
-plt.title("Electric Station Growth (2020–2025)")
+plt.title("Electric Vehicle Station Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Labels y-axis
@@ -90,7 +90,7 @@ plt.plot(
 )
 
 # Sets chart title
-plt.title("Hydrogen Station Growth (2020–2025)")
+plt.title("Hydrogen Fuel Cell Station Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Labels y-axis
