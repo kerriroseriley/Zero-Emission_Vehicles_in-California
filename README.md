@@ -18,13 +18,13 @@ This analysis shows the growth of Zero Emission Vehicles registration and chargi
 ### ZEV Registration Data for 2020 through 2025
 + Obtained from the California Open Data Portal
 + Data Course: [California ZEV Registration Data in 2025](https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code/resource/b459d957-5d94-4b10-999d-770419870364)
-+ Downloaded five CSV files containing vehicle registration data by fuel type for the years 2020 through 2025
++ Downloaded six CSV files containing vehicle registration data by fuel type for the years 2020 through 2025
 + Data includes the number of vehicles located within a zip code jurisdiction, fuel type of the vehicle(s), and zip code
 
 ### ZEV Open Public Charging Station Data
 + Obtained from the US Department of Energy: Alternative Fuels Data Center
 + Data Source: [Department of Energy Alternative Fuel Data](https://afdc.energy.gov/data_download)
-+ Downloaded five CSV files of all public, open alternative fuel stations in California on December 31 of each year from 2020 to 2025
++ Downloaded six CSV files of all public, open alternative fuel stations in California on December 31 of each year from 2020 to 2025
 + Data shows all alternative fuel stations. Isolate this down to electric battery and hydrogran charging stations only. These are the Zero Emissions Vehicles.
 + Includes station fuel type, state, and zip code, and variable created for the year.
 
@@ -40,43 +40,48 @@ This analysis shows the growth of Zero Emission Vehicles registration and chargi
 Vehicle Registration Analysis
 
 zev_registration_filter.py: 
- + Reads multiple yearly vehicle registration files, cleans column names, and standardizes key fields (ZIP, fuel type, vehicles, date).
- + Converts dates to extract the registration year and removes invalid or missing date entries.
- + Filters data to include only Battery Electric and Hydrogen Fuel Cell vehicles, excluding out-of-state (“OOS”) ZIP codes.
- + Combines all cleaned datasets into one file and saves the result as ZEVs_filtered.csv.
++ Reads six yearly vehicle registration CSV files (2020-2025), cleans column names, and standardizes key fields (ZIP, fuel type, vehicles, date).
++ Cleans the data by fixing ZIP codes, removing invalid entries, and converting vehicle counts to numeric values.
++ Filters the dataset to include only Battery Electric and Hydrogen Fuel Cell vehicles.
++ Combines all years into one dataset and saves the result as a single filtered CSV file.
 
 
 registration_analysis.py:
-+ Read Vehicle Registration Data (ZEVs_filtered.csv)
-+ Generate descriptive statistics and visualizations:
-    + Bar charts showing top 10 zip codes for registration types and counts in 2025
-        + Include count labels
-    + Create heatmap showing registrations by Zip Code and year
++ Loads and cleans the filtered ZEV dataset, ensuring consistent data types for year, fuel type, ZIP codes, and vehicle counts.
++ Aggregates registrations by year and fuel type to analyze growth trends over time.
++ Generates and saves line charts showing registration growth for Battery Electric and Hydrogen Fuel Cell vehicles (2020–2025).
++ Identifies top 10 ZIP codes by registrations for each fuel type and creates corresponding bar charts.
 
 
 ZEV Charging Station Analysis
 
 stat_filter.py:
- + Reads six yearly CSV files (2020–2025), adds a Year column to each, and combines them into one dataset.
- + Filters the data to include only stations in California (CA) with fuel types ELEC (electric) or HY (hydrogen).
- + Selects a subset of columns: Year, Fuel Type Code, ZIP, and Station Name.
- + Exports the cleaned and filtered dataset to a new CSV file named stations_2020_2025.csv.
++ Loads six yearly station datasets (2020–2025), adds a year column to each, and combines them into one dataset.
++ Cleans key fields by standardizing state and fuel type values.
++ Filters the data to include only California stations offering electric (ELEC) and hydrogen (HY) charging.
++ Selects relevant columns and saves the final dataset as a single CSV file.
 
 
 stat_analysis.py:
- + Bar chart showing top 10 zip codes for charger station counts and types
++ Loads and cleans the combined charging station dataset, standardizing fuel types, ZIP codes, and year values.
++ Aggregates the number of stations by year and fuel type (electric and hydrogen).
++ Generates a line chart showing growth in electric charging stations over time.
++ Generates a second line chart showing growth in hydrogen fueling stations over time.
 
  
 Infrastructure Analysis
  
 merged.py
- + Loads two datasets (ZEV vehicles and fueling stations), standardizes ZIP code formats, and keeps only 2025 data for analysis.
- + Splits vehicles into battery electric and hydrogen fuel cell categories, and separates stations into EV (ELEC) and hydrogen (HY) types.
- + Aggregates totals by ZIP code: sums vehicles per type and counts stations per type in each ZIP.
- + Merges vehicle and station data per ZIP and computes “vehicles per station” ratios, then saves the results to CSV files.
- 
++ Loads and cleans vehicle registration and charging station datasets, standardizing ZIP codes and numeric fields.
++ Filters both datasets to 2025 and separates Battery Electric and Hydrogen Fuel Cell data.
++ Aggregates vehicle counts and station counts by ZIP code for each fuel type.
++ Merges datasets and calculates vehicles-per-station ratios, then saves results for electric and hydrogen separately.
+
 map.py
- + 
++ Loads electric and hydrogen vehicle ratio datasets and cleans ZIP codes for consistent spatial matching.
++ Loads U.S. ZIP Code Tabulation Areas and state boundaries, then clips ZIP geometries to California.
++ Joins ZEV ratio data to California ZIP geometries, creating geospatial datasets for electric and hydrogen metrics.
++ Exports the results as GeoPackage files, including a California base layer and two ZEV ratio spatial layers.
 
 ## Visualizations: Maps and Plots
 
