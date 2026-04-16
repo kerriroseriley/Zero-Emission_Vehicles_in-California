@@ -83,7 +83,7 @@ map.py
 + Joins ZEV ratio data to California ZIP geometries, creating geospatial datasets for electric and hydrogen metrics.
 + Exports the results as GeoPackage files, including a California base layer and two ZEV ratio spatial layers.
 
-## Visualizations: Maps and Plots
+## Visualizations: Bar Charts and Plots
 
 1. Top 10 Zip Codes of Battery Electric Vehicles Registrations in 2025
 ![Top 10 Zip Codes of Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/d8f3a21ad885223bd9c5422fe74612c50f48035b/outputs/bev_zip_top10.png)
@@ -105,6 +105,10 @@ map.py
 
 1. Growth of Hydrogen Fuel Cell  Vehicle Registrations 2020-2025
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/84e18c6905bc00449dae3d2ec0b0f7ab9f917383/outputs/h2_growth.png)
+
+
+## Visualizations: Mapping
+Missing ZIP codes in the heat map are not errors but result from how the data and geographic boundaries are defined and processed. The analysis combines vehicle registrations, charging station data, and Census ZCTA geometries, and a ZIP code will only appear with a value if it exists in at least one dataset. Areas with no recorded vehicles or stations therefore do not produce values and appear blank. In addition, USPS ZIP codes do not perfectly align with Census ZCTAs, so some ZIP codes in the data have no matching geographic polygon and are excluded during mapping. Further filtering steps—such as removing out-of-state entries, standardizing ZIP formats, and restricting the analysis to California—also eliminate some records. Finally, ZIP codes with zero charging stations yield undefined vehicle-to-station ratios, which are intentionally represented as missing values on the map.
 
 1. Battery Electric Vehicle Registration to Station Ratio by ZIP Code
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
