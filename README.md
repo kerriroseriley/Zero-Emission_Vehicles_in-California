@@ -114,7 +114,7 @@ map.py
     + Overall, there was an increase of 7 HFC charging stations in California
 
 6. Growth of Electric Battery Vehicle Registrations 2020-2025
-![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/6bfcd643e5950f29190ea4c4aee257494d328c6e/outputs/bev_growth.png)
+![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/a0779ddde01cfd2282bba2e91ecb5ae64fe13e51/outputs/bev_growth.png)
     + Exponential growth of Electric Battery Vehicle Registrations in California 
     + From 2020 to 2025, there was an 1,139,496 increase in the number of electric battery vehicle registrations in the State of California
 
