@@ -1,14 +1,8 @@
  
 """
 Map ZIP-level ZEV ratios to GeoPackages
-
-Inputs:
-- ELEC_ratio.csv
-- HY_ratio.csv
-- cb_2025_us_zcta520_500k.zip
-- cb_2020_us_state_500k.zip 
-
-Outputs: ELEC_ratio.gpkg, HY_ratio.gpkg
+Inputs: ELEC_ratio.csv, HY_ratio.csv, tl_2025_us_zcta520.zip, tl_2025_us_state.zip
+Outputs: CALIFORNIA.gpkg, ELEC_ratio.gpkg, HY_ratio.gpkg
 """
 
 # import modules
@@ -38,7 +32,7 @@ zcta = zcta.to_crs(ca.crs)
 
 # Clip ZIPS to California 
 zcta_ca = gpd.clip(zcta, ca)
-
+ 
 # Standardize ZIP column 
 zcta_ca = zcta_ca.rename(columns={"ZCTA5CE20": "zip"})
 zcta_ca["zip"] = zcta_ca["zip"].astype(str)

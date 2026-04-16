@@ -1,7 +1,7 @@
 """
 Zero Emissions Vehicles Charger Stations Analysis
 Input: stations_2020_2025.csv
-Output:
+Output: elec_growth.png, hy_growth.png
     
 """ 
 # import modules

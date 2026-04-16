@@ -1,11 +1,9 @@
 """
 Filter Zero Emission Vehicles Registration
-Inputs:
-    inputs/ZEVs_2020.csv ... ZEVs_2025.csv
-Output:
-    outputs/ZEVs_filtered.csv
+Inputs: ZEVs_2020.csv, ZEVs_2021.csv, ZEVs_2022.csv, ZEVs_2023.csv, ZEVs_2024.csv, ZEVs_2025.csv
+Output: ZEVs_filtered.csv
 """
-
+# Import modules
 import pandas as pd
 
 # Input files
@@ -18,7 +16,7 @@ files = [
     "inputs/ZEVs_2025.csv",
 ]
 
-# Fuel types to keep
+# Keep Battery Electric and Hydrogen Fuel Call Fuel Types
 keep_fuels = ["Battery Electric", "Hydrogen Fuel Cell"]
 
 filtered_dfs = []
@@ -48,7 +46,6 @@ for file in files:
         continue
 
     # Assign year from filename
-
     year = file.split("_")[-1].replace(".csv", "")
     df["Year"] = int(year)
 
