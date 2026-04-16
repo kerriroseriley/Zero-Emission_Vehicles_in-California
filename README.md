@@ -134,7 +134,7 @@ For Policy Makers and Planners in California:
 
 “Hydrogen in Transportation.” EPA, Environmental Protection Agency, www.epa.gov/greenvehicles/hydrogen-transportation. Accessed 14 Apr. 2026. 
 
-Resolution 22-12. California Air Resources Board. State of California, 25 Aug. 2022, ww2.arb.ca.gov/sites/default/files/barcu/board/books/2022/082522/prores22-12.pdf. 
+Resolution 22-12. California Air Resources Board. State of California, 25 Aug. 2022, ww2.arb.ca.gov/sites/default/files/barcu/board/books/2022/082522/prores22-12.pdf.
 
 
 
