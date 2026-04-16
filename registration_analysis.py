@@ -74,12 +74,12 @@ plt.title("Battery Electric Vehicle Registrations Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Label y-axis
-plt.plot(growth.index, growth["Battery Electric"] / 1_000_000)
-plt.ylabel("Registrations (Millions)")
-
+plt.ylabel("Number of Registrations")
 # Adds grid lines
 plt.grid(True, alpha=0.3)
  
+
+plt.ticklabel_format(style='plain', axis='y')
 
 # Prevents overlapping elements
 plt.tight_layout()
