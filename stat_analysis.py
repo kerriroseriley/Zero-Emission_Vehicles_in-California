@@ -61,6 +61,7 @@ plt.plot(
     marker="o",
     color="blue"
 )
+
 # Chart title
 plt.title("Electric Vehicle Station Growth (2020–2025)")
 # Labels x-axis

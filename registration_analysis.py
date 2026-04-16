@@ -1,7 +1,7 @@
 """
 Zero Emissions Vehicle Registrations Analysis
 Input: ZEVs_filtered.csv
-Output: bev_growth.png, bev_zip_top10.png, h2_zip_top10.png
+Output: bev_growth.png, h2_growth.png, bev_zip_top10.png, h2_zip_top10.png
 """ 
 
 # import  modules
