@@ -108,8 +108,10 @@ map.py
 
 1. Battery Electric Vehicle Registration to Station Ratio by ZIP Code
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
-Classification method: Equal Counts (Quartiles)
+Classification method: Equal Counts (Quartiles) 
+
 Equal Counts (Quartiles) classification was used to map the vehicle-to-station ratio for Battery Electric Vehicles (BEVs). This method divides the data into classes containing an equal number of observations, allowing for consistent comparison across regions.
+
 BEV charging infrastructure is relatively widespread and more evenly developed, resulting in a smoother distribution of vehicle-to-station ratios. Using quartiles ensures that the data are evenly represented across classes and prevents the map from being dominated by a small number of high or low values. This approach is particularly useful for highlighting relative differences and ranking areas in terms of infrastructure availability.
 
 1. Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
