@@ -117,8 +117,10 @@ BEV charging infrastructure is relatively widespread and more evenly developed, 
 1. Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
 ![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png)
 Classification method: Natural Breaks (Jenks)
- + The Natural Breaks (Jenks) classification method was used to map the vehicle-to-station ratio for Hydrogen Fuel Cell Vehicles. This method identifies natural groupings in the data by minimizing variation within classes and maximizing differences between them.
- + Hydrogen infrastructure is sparse and unevenly distributed, with significant disparities between regions. As a result, the data exhibit clustering and potential outliers. The Jenks method is well-suited to this type of distribution, as it highlights meaningful gaps and emphasizes areas with particularly high or low vehicle-to-station ratios, providing a more accurate representation of infrastructure inequality.
+ 
+The Natural Breaks (Jenks) classification method was used to map the vehicle-to-station ratio for Hydrogen Fuel Cell Vehicles. This method identifies natural groupings in the data by minimizing variation within classes and maximizing differences between them.
+
+Hydrogen infrastructure is sparse and unevenly distributed, with significant disparities between regions. As a result, the data exhibit clustering and potential outliers. The Jenks method is well-suited to this type of distribution, as it highlights meaningful gaps and emphasizes areas with particularly high or low vehicle-to-station ratios, providing a more accurate representation of infrastructure inequality.
 
 ## Conclusion and Recommendations
 This project analyzes trends in Zero Emission Vehicle (ZEV) registrations alongside the spatial distribution and growth of charging infrastructure across ZIP codes in California, with a focus on 2025. By combining vehicle registration data with station availability, the analysis highlights how adoption and infrastructure development are not always aligned geographically.
