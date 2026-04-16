@@ -89,32 +89,32 @@ map.py
 ![Top 10 Zip Codes of Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/bev_zip_top10.png)
 + 
 
-1. Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025
+2. Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025
 ![Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/h2_zip_top10.png)
 + 
 
-1. Top 10 Zip Codes by Electric and Hydrogen Fuel Cell Vehicle Charger Count in 2025
+3. Top 10 Zip Codes by Electric and Hydrogen Fuel Cell Vehicle Charger Count in 2025
 ![Top 10 Zip Codes of Electric Battery and Hydrogen Fuel Cell Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/ec3269fed882465c14e50e0caa1a89214e0e5e5a/outputs/top10_zip_charger_stations.png)
 + Slower
 
-1. Growth of Electric Battery Vehicle Registrations 2020-2025
+4. Growth of Electric Battery Vehicle Registrations 2020-2025
 ![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/6bfcd643e5950f29190ea4c4aee257494d328c6e/outputs/bev_growth.png)
 + Exponential growth of Electric Battery Vehicle Registrations in California 
 + Accerlating growth from 2023 to 2025
 
-1. Growth of Hydrogen Fuel Cell  Vehicle Registrations 2020-2025
+5. Growth of Hydrogen Fuel Cell  Vehicle Registrations 2020-2025
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8fd2d2e4e8120d2a5b45e65e421debae4f94180f/outputs/h2_growth.png)
 + Growth in Hydrogen Fuel Cell vehicle registrations from 2020 to 2024
 + In 2025, a sharp  decline downwardsin HFC vehicle regstration in California
 
-1. Growth of Electric Battery Stations 2020-2025
+6. Growth of Electric Battery Stations 2020-2025
 ![Growth of Electric Battery Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/elec_growth.png)
 + Overall, positive growth in electric battery stations from 2020 to 2025
 + Major growth from 2020 to 2021 in stations
 + 2021 to 2022, there was no growth in Electric charging stations
 + 2020 to 2025, there was moderate growth 
 
-1. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
+7. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
 ![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
 + 
 
