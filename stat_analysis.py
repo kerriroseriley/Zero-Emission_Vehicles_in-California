@@ -175,14 +175,30 @@ plt.show()
 
 # Electric stations
 elec_2020 = growth.loc[2020, "ELEC"]
+elec_2021 = growth.loc[2021, "ELEC"]
+elec_2022 = growth.loc[2022, "ELEC"]
+elec_2023 = growth.loc[2023, "ELEC"]
+elec_2024 = growth.loc[2024, "ELEC"]
 elec_2025 = growth.loc[2025, "ELEC"]
 
 print(f"Electric stations (2020): {elec_2020}")
+print(f"Electric stations (2021): {elec_2021}")
+print(f"Electric stations (2022): {elec_2022}")
+print(f"Electric stations (2023): {elec_2023}")
+print(f"Electric stations (2024): {elec_2024}")
 print(f"Electric stations (2025): {elec_2025}")
 
 # Hydrogen stations
 hy_2020 = growth.loc[2020, "HY"]
+hy_2021 = growth.loc[2021, "HY"]
+hy_2022 = growth.loc[2022, "HY"]
+hy_2023 = growth.loc[2023, "HY"]
+hy_2024 = growth.loc[2024, "HY"]
 hy_2025 = growth.loc[2025, "HY"]
 
 print(f"Hydrogen stations (2020): {hy_2020}")
+print(f"Hydrogen stations (2021): {hy_2021}")
+print(f"Hydrogen stations (2022): {hy_2022}")
+print(f"Hydrogen stations (2023): {hy_2023}")
+print(f"Hydrogen stations (2024): {hy_2024}")
 print(f"Hydrogen stations (2025): {hy_2025}")
