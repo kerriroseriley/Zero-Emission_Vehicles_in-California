@@ -92,11 +92,11 @@ map.py
     
 2. Top 10 Zip Codes of Battery Electric Vehicles Registrations in 2025
 ![Top 10 Zip Codes of Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/bev_zip_top10.png)
-    +
+    + The top 10 ZIP Codes had a range of 22,015 to 31,909 EV registrations in 2025
 
 3. Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025
 ![Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/h2_zip_top10.png)
-    + 
+    + The top 10 ZIP Codes had a range of 334 to 564 HFC registrations in 2025
 
 4. Growth of Electric Battery Stations 2020-2025
 ![Growth of Electric Battery Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/elec_growth.png)

@@ -157,7 +157,12 @@ plt.savefig("outputs/bev_zip_top10.png", dpi=300)
 
 # Display the plot
 plt.show()
+# See minimum and maximum of zip code (to see range of top 10 zips)
+min_val = bev_zip["vehicles"].min()
+max_val = bev_zip["vehicles"].max()
 
+print(f"Minimum registrations (top 10 zips): {min_val}")
+print(f"Maximum registrations (top 10 zips): {max_val}")
 
 # Hydrogen Zip Code Distribution
 # Filters hydrogren data, sorts, and selects top 10 ZIP codes
@@ -190,3 +195,11 @@ plt.savefig("outputs/h2_zip_top10.png", dpi=300)
 
 # Display final plot
 plt.show()
+
+# Display Min and max: 
+    # Get min and max for Hydrogen top 10 ZIPs
+min_val = h2_zip["vehicles"].min()
+max_val = h2_zip["vehicles"].max()
+
+print(f"Minimum hydrogen registrations (top 10 zips): {min_val}")
+print(f"Maximum hydrogen registrations (top 10 zips): {max_val}")
