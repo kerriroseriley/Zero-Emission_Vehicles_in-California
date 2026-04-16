@@ -20,7 +20,7 @@ h2["zip"] = h2["zip"].astype(str).str.extract(r"(\d{5})")[0]
 # Drop invalid ZIPs
 ev = ev.dropna(subset=["zip"])
 h2 = h2.dropna(subset=["zip"])
-
+ 
 # Geography
 zcta = gpd.read_file("tl_2025_us_zcta520.zip")
 states = gpd.read_file("tl_2025_us_state.zip")
