@@ -65,7 +65,7 @@ plt.plot(
     growth.index,
     growth["Battery Electric"],
     marker="o",
-    color="green"
+    color="blue"
 )
 # Force x-axis to show only whole years
 plt.xticks(growth.index)
@@ -92,13 +92,13 @@ plt.show()
 # Hydrogen Growth Plot
 # Creates figure for hydrogen vehicle registration growth
 plt.figure(figsize=(8,5))
-
+ 
 # Plots hydrogen fuel cell growth over time
 plt.plot(
     growth.index,
     growth["Hydrogen Fuel Cell"],
     marker="o",
-    color="blue"
+    color="green"
 )
 # Forces x-axis to show whole years
 plt.xticks(growth.index)
