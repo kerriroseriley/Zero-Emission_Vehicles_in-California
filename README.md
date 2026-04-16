@@ -116,7 +116,9 @@ map.py
 
 7. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
 ![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
-    + 
+    + Positive growth in Hydrogen Fuel Cell charging stations from 2020 to 2023
+    + In 2023, we see a downward shift continuing through to 2025
+    + This was a decrease from 60 to 50 charging stations in California
 
 ## Visualizations: Mapping
 Missing ZIP codes in the heat map are not errors but result from how the data and geographic boundaries are defined and processed. The analysis combines vehicle registrations, charging station data, and Census ZCTA geometries, and a ZIP code will only appear with a value if it exists in at least one dataset. Areas with no recorded vehicles or stations therefore do not produce values and appear blank. In addition, USPS ZIP codes do not perfectly align with Census ZCTAs, so some ZIP codes in the data have no matching geographic polygon and are excluded during mapping. Further filtering steps, such as removing out-of-state entries, standardizing ZIP formats, and restricting the analysis to California, also eliminate some records. Finally, ZIP codes with zero charging stations yield undefined vehicle-to-station ratios, which are intentionally represented as missing values on the map.
