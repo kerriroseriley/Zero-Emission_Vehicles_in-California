@@ -92,7 +92,7 @@ map.py
 ![Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/d8f3a21ad885223bd9c5422fe74612c50f48035b/outputs/h2_zip_top10.png)
 
 1. Top 10 Zip Codes by Electric and Hydrogen Fuel Cell Vehicle Charger Count in 2025
-![Top 10 Zip Codes of Electric Battery and Hydrogen Fuel Cell Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/d8f3a21ad885223bd9c5422fe74612c50f48035b/outputs/top10_zip_charger_stations.png)
+![Top 10 Zip Codes of Electric Battery and Hydrogen Fuel Cell Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b90ccb418d3814521a74dc78fc2c58b34ed5d838/outputs/top10_zip_charger_stations.png)
 
 1. Growth of Electric Battery Stations 2020-2025
 ![Growth of Electric Battery Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/elec_growth.png)
