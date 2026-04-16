@@ -51,7 +51,7 @@ hy_zip = (
     .head(10)
 )
 
-
+ 
 # Create side-by-side plots
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
