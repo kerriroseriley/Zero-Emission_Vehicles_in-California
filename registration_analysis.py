@@ -100,6 +100,8 @@ plt.plot(
     marker="o",
     color="green"
 )
+
+plt.ticklabel_format(style='plain', axis='y')
 # Forces x-axis to show whole years
 plt.xticks(growth.index)
 # Sets chart title
