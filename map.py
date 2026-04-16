@@ -64,7 +64,7 @@ h2_gdf = zcta_ca.merge(h2, on="zip", how="left")
 ev_gdf = gpd.GeoDataFrame(ev_gdf, geometry="geometry", crs=zcta_ca.crs)
 h2_gdf = gpd.GeoDataFrame(h2_gdf, geometry="geometry", crs=zcta_ca.crs)
 
-# Create California kayer
+# Create California layer
 ca_fill = ca.copy()
 ca_fill["layer"] = "background"
 
