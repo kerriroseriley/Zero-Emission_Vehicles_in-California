@@ -81,6 +81,22 @@ plt.savefig("outputs/top10_zip_charger_stations.png", dpi=300)
 plt.show()
 
 
+# Electric min and max
+elec_min = elec_zip["station_count"].min()
+elec_max = elec_zip["station_count"].max()
+
+print(f"Electric stations (top 10 zips) - Min: {elec_min}")
+print(f"Electric stations (top 10 zips) - Max: {elec_max}")
+
+# Hydrogen min and max
+hy_min = hy_zip["station_count"].min()
+hy_max = hy_zip["station_count"].max()
+
+print(f"Hydrogen stations (top 10 zips) - Min: {hy_min}")
+print(f"Hydrogen stations (top 10 zips) - Max: {hy_max}")
+
+
+
 # Yearly Growth Trends
 
 # Build grouped table: counts number of stations per year and fuel type 
