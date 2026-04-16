@@ -114,7 +114,7 @@ Equal Counts (Quartiles) classification was used to map the vehicle-to-station r
 
 BEV charging infrastructure is relatively widespread and more evenly developed, resulting in a smoother distribution of vehicle-to-station ratios. Using quartiles ensures that the data are evenly represented across classes and prevents the map from being dominated by a small number of high or low values. This approach is particularly useful for highlighting relative differences and ranking areas in terms of infrastructure availability.
 
-1. Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
+1.Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
 ![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png)
 Classification method: Natural Breaks (Jenks)
  
