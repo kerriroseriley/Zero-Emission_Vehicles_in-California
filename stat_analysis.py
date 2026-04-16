@@ -59,7 +59,7 @@ plt.plot(
     growth.index,
     growth["ELEC"],
     marker="o",
-    color="blue"
+    color="green"
 )
 # Chart title
 plt.title("Electric Station Growth (2020–2025)")
@@ -86,7 +86,7 @@ plt.plot(
     growth.index,
     growth["HY"],
     marker="o",
-    color="green"
+    color="blue"
 )
 
 # Sets chart title
