@@ -1,9 +1,10 @@
 """
 Zero Emissions Vehicles Charger Stations Analysis
 Input: stations_2020_2025.csv
-Output: elec_growth.png, hy_growth.png
+Output: elec_growth.png, hy_growth.png, top10_zip_charger_stations.png
     
 """ 
+
 # import modules
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -30,6 +31,55 @@ df["Year"] = pd.to_numeric(df["Year"], errors="coerce").astype("Int64")
 
 # Removes rows where Year is missing or invalid
 df = df.dropna(subset=["Year"])
+
+
+# -------------------------------
+# Top 10 ZIP Code Analysis (Side-by-Side)
+# -------------------------------
+
+zip_counts = df.groupby(["ZIP", "Fuel Type Code"]).size().reset_index(name="station_count")
+
+# Electric top 10 ZIPs
+elec_zip = (
+    zip_counts[zip_counts["Fuel Type Code"] == "ELEC"]
+    .sort_values("station_count", ascending=False)
+    .head(10)
+)
+
+# Hydrogen top 10 ZIPs
+hy_zip = (
+    zip_counts[zip_counts["Fuel Type Code"] == "HY"]
+    .sort_values("station_count", ascending=False)
+    .head(10)
+)
+
+# Create side-by-side plots
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# ---------------- Electric ----------------
+axes[0].bar(elec_zip["ZIP"], elec_zip["station_count"], color="blue")
+axes[0].set_title("Top 10 ZIP Codes - Electric Stations")
+axes[0].set_xlabel("ZIP Code")
+axes[0].set_ylabel("Number of Stations")
+axes[0].tick_params(axis="x", rotation=45)
+axes[0].grid(axis="y", alpha=0.3)
+
+# ---------------- Hydrogen ----------------
+axes[1].bar(hy_zip["ZIP"], hy_zip["station_count"], color="green")
+axes[1].set_title("Top 10 ZIP Codes - Hydrogen Stations")
+axes[1].set_xlabel("ZIP Code")
+axes[1].set_ylabel("Number of Stations")
+axes[1].tick_params(axis="x", rotation=45)
+axes[1].grid(axis="y", alpha=0.3)
+
+# Layout fix
+plt.tight_layout()
+
+# Save combined figure
+plt.savefig("outputs/top10_zip_charger_stations.png", dpi=300)
+
+# Show plot
+plt.show()
 
 
 # Yearly Growth Trends
