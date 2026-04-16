@@ -108,9 +108,11 @@ map.py
 
 1. Battery Electric Vehicle Registration to Station Ratio
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
+Mode of Equal Counts (Quartiles) used to map the vehicle-stations ratio for Battery Electric Vehicles and stations.
 
 1. Hydrogen Fuel Cell Vehicle to Station Ratio
 ![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png)
+Mode of Natural Breaks (Jenks) used to map the vehicle-station ratio for Hydrogen Fuel vehicles and stations
 
 ## Conclusion and Recommendations
 This project analyzes trends in Zero Emission Vehicle (ZEV) registrations alongside the spatial distribution and growth of charging infrastructure across ZIP codes in California, with a focus on 2025. By combining vehicle registration data with station availability, the analysis highlights how adoption and infrastructure development are not always aligned geographically.
