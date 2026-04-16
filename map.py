@@ -12,7 +12,7 @@ import geopandas as gpd
 # Load the data
 ev = pd.read_csv("outputs/ELEC_ratio.csv")
 h2 = pd.read_csv("outputs/HY_ratio.csv") 
-
+ 
 # Standardize ZIPs (robust)
 ev["zip"] = ev["zip"].astype(str).str.extract(r"(\d{5})")[0]
 h2["zip"] = h2["zip"].astype(str).str.extract(r"(\d{5})")[0]
