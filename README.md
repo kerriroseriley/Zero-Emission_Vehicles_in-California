@@ -113,12 +113,15 @@ map.py
 ![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png)
 
 ## Conclusion and Recommendations
-This project shows the trends of ZEVs Vehicle Registrations and the disproportionate growth of Zero Emission charging stations across ZIP codes in the State of California in 2025. Key takeways include the rise of Battery Electric Vehicle registrations, especially 2021-2022, the outpacing infrastructure growth in several ZIP codes. 
+This project analyzes trends in Zero Emission Vehicle (ZEV) registrations alongside the spatial distribution and growth of charging infrastructure across ZIP codes in California, with a focus on 2025. By combining vehicle registration data with station availability, the analysis highlights how adoption and infrastructure development are not always aligned geographically.
 
+Key findings show a strong increase in Battery Electric Vehicle (BEV) registrations, particularly between 2021 and 2022, reflecting a rapid acceleration in consumer adoption of electric vehicles during that period. In contrast, hydrogen fuel cell vehicle growth remains comparatively limited and concentrated in fewer areas. While charging infrastructure has expanded over time, the growth is uneven across ZIP codes, resulting in clear disparities between regions with high EV adoption and those with limited charging access.
+
+In several ZIP codes, vehicle adoption has outpaced the development of charging infrastructure, creating potential bottlenecks for continued ZEV adoption. This mismatch suggests that infrastructure expansion has not consistently kept pace with demand, particularly in high-growth EV regions.
 
 For Policy Makers and Planners in California:
  + Targeted infrastructure planning and development: Investments in zero-emission vehicle infrastructure should focus on ZIP codes where ZEV charger availability is disproportionately low compared to the number of registered zero-emission vehicles.
-
+ + Addressing these gaps would improve accessibility and more equitable EV adoption across regions 
 
 ## References
 “Advanced Clean Cars.” Advanced Clean Cars, ww2.arb.ca.gov/our-work/programs/drive-forward-light-duty-vehicle-program/advanced-clean-cars. Accessed 11 Apr. 2026. 
