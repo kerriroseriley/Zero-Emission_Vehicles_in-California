@@ -77,7 +77,7 @@ plt.xlabel("Year")
 plt.ylabel("Number of Registrations")
 # Adds grid lines
 plt.grid(True, alpha=0.3)
-
+ 
 # Prevents overlapping elements
 plt.tight_layout()
 
