@@ -56,7 +56,7 @@ hy_zip = (
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
 # Electric
-axes[0].bar(elec_zip["ZIP"], elec_zip["station_count"], color="green")
+axes[0].bar(elec_zip["ZIP"], elec_zip["station_count"], color="blue")
 axes[0].set_title("Number of Battery Electric Stations by ZIP Code (2025)")
 axes[0].set_xlabel("ZIP Code")
 axes[0].set_ylabel("Number of Stations")
@@ -64,7 +64,7 @@ axes[0].tick_params(axis="x", rotation=45)
 axes[0].grid(axis="y", alpha=0.3)
 
 # Hydrogen
-axes[1].bar(hy_zip["ZIP"], hy_zip["station_count"], color="blue")
+axes[1].bar(hy_zip["ZIP"], hy_zip["station_count"], color="green")
 axes[1].set_title("Number of Hydrogen Fuel Cell Stations by ZIP Code (2025)")
 axes[1].set_xlabel("ZIP Code")
 axes[1].set_ylabel("Number of Stations")
