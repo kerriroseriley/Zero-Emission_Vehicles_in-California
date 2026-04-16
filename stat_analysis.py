@@ -33,9 +33,7 @@ df["Year"] = pd.to_numeric(df["Year"], errors="coerce").astype("Int64")
 df = df.dropna(subset=["Year"])
 
 
-# -------------------------------
-# Top 10 ZIP Code Analysis (Side-by-Side)
-# -------------------------------
+# Top 10 ZIP Code Analysis
 
 zip_counts = df.groupby(["ZIP", "Fuel Type Code"]).size().reset_index(name="station_count")
 
@@ -53,10 +51,11 @@ hy_zip = (
     .head(10)
 )
 
+
 # Create side-by-side plots
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
-# ---------------- Electric ----------------
+# Electric
 axes[0].bar(elec_zip["ZIP"], elec_zip["station_count"], color="blue")
 axes[0].set_title("Top 10 ZIP Codes - Electric Stations")
 axes[0].set_xlabel("ZIP Code")
@@ -64,7 +63,7 @@ axes[0].set_ylabel("Number of Stations")
 axes[0].tick_params(axis="x", rotation=45)
 axes[0].grid(axis="y", alpha=0.3)
 
-# ---------------- Hydrogen ----------------
+# Hydrogen
 axes[1].bar(hy_zip["ZIP"], hy_zip["station_count"], color="green")
 axes[1].set_title("Top 10 ZIP Codes - Hydrogen Stations")
 axes[1].set_xlabel("ZIP Code")
