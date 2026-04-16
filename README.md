@@ -17,12 +17,14 @@ This analysis shows the growth of Zero Emission Vehicles registration and chargi
 ## Input Data
 ### ZEV Registration Data for 2020 through 2025
 + Obtained from the California Open Data Portal
-+ Data Course: [Califronia ZEV Registration Data in 2025](https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code/resource/b459d957-5d94-4b10-999d-770419870364)
++ Data Course: [California ZEV Registration Data in 2025](https://data.ca.gov/dataset/vehicle-fuel-type-count-by-zip-code/resource/b459d957-5d94-4b10-999d-770419870364)
++ Downloaded five CSV files containing vehicle registration data by fuel type for the years 2020 through 2025
 + Data includes the number of vehicles located within a zip code jurisdiction, fuel type of the vehicle(s), and zip code
 
 ### ZEV Open Public Charging Station Data
 + Obtained from the US Department of Energy: Alternative Fuels Data Center
 + Data Source: [Department of Energy Alternative Fuel Data](https://afdc.energy.gov/data_download)
++ Downloaded five CSV files of all public, open alternative fuel stations in California on December 31 of each year from 2020 to 2025
 + Data shows all alternative fuel stations. Isolate this down to electric battery and hydrogran charging stations only. These are the Zero Emissions Vehicles.
 + Includes station fuel type, state, and zip code, and variable created for the year.
 
