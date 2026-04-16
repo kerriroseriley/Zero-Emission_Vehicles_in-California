@@ -108,11 +108,15 @@ map.py
 
 1. Battery Electric Vehicle Registration to Station Ratio
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8848e80c51d9461f0de5506eb1c8111b6af08d7b/outputs/zev.png)
-Mode of Equal Counts (Quartiles) used to map the vehicle-stations ratio for Battery Electric Vehicles and stations.
+Classification method: Equal Counts (Quartiles)
+ + Equal Counts (Quartiles) classification was used to map the vehicle-to-station ratio for Battery Electric Vehicles (BEVs). This method divides the data into classes containing an equal number of observations, allowing for consistent comparison across regions.
+ + BEV charging infrastructure is relatively widespread and more evenly developed, resulting in a smoother distribution of vehicle-to-station ratios. Using quartiles ensures that the data are evenly represented across classes and prevents the map from being dominated by a small number of high or low values. This approach is particularly useful for highlighting relative differences and ranking areas in terms of infrastructure availability.
 
 1. Hydrogen Fuel Cell Vehicle to Station Ratio
 ![Hydrogen Fuel Cell Vehicle to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/b3ee8ddc565b9d189e843b72c79cdd8bb3b3a01e/outputs/hydrogen_map.png)
-Mode of Natural Breaks (Jenks) used to map the vehicle-station ratio for Hydrogen Fuel vehicles and stations
+Classification method: Natural Breaks (Jenks)
+ + The Natural Breaks (Jenks) classification method was used to map the vehicle-to-station ratio for Hydrogen Fuel Cell Vehicles. This method identifies natural groupings in the data by minimizing variation within classes and maximizing differences between them.
+ + Hydrogen infrastructure is sparse and unevenly distributed, with significant disparities between regions. As a result, the data exhibit clustering and potential outliers. The Jenks method is well-suited to this type of distribution, as it highlights meaningful gaps and emphasizes areas with particularly high or low vehicle-to-station ratios, providing a more accurate representation of infrastructure inequality.
 
 ## Conclusion and Recommendations
 This project analyzes trends in Zero Emission Vehicle (ZEV) registrations alongside the spatial distribution and growth of charging infrastructure across ZIP codes in California, with a focus on 2025. By combining vehicle registration data with station availability, the analysis highlights how adoption and infrastructure development are not always aligned geographically.
