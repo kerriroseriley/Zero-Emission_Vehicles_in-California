@@ -66,7 +66,7 @@ plt.plot(
     growth["Battery Electric"],
     marker="o",
     color="blue"
-) 
+)  
 # Force x-axis to show only whole years
 plt.xticks(growth.index)
 # Sets the chart title
@@ -74,12 +74,12 @@ plt.title("Battery Electric Vehicle Registrations Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Label y-axis
-plt.ylabel("Number of Registrations")
+plt.plot(growth.index, growth["Battery Electric"] / 1_000_000)
+plt.ylabel("Registrations (Millions)")
+
 # Adds grid lines
 plt.grid(True, alpha=0.3)
  
-
-plt.ticklabel_format(style='plain', axis='y')
 
 # Prevents overlapping elements
 plt.tight_layout()
