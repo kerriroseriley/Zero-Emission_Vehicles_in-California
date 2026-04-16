@@ -101,7 +101,8 @@ map.py
 4. Growth of Electric Battery Stations 2020-2025
 ![Growth of Electric Battery Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/elec_growth.png)
     + Overall, positive growth in electric battery stations from 2020 to 2025
-    + Major growth from 2020 to 2021 in stations
+        + There was a 11,963 increase in the number of electic battery vehicle stations from 2020 to 2025 in California 
+    + Major growth from 2020 to 2021 in stations 
     + 2021 to 2022, there was minimal change the number of Electric charging stations
     + 2022 to 2025, there was moderate growth 
 
@@ -110,6 +111,7 @@ map.py
     + Positive growth in Hydrogen Fuel Cell charging stations from 2020 to 2023
     + In 2023, we see a downward shift continuing through to 2025
     + This was a decrease from about 60 to 50 charging stations in California
+    + Overall, there was an increase of 7 HFC charging stations in California
 
 6. Growth of Electric Battery Vehicle Registrations 2020-2025
 ![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/6bfcd643e5950f29190ea4c4aee257494d328c6e/outputs/bev_growth.png)

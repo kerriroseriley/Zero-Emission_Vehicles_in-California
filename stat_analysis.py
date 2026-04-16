@@ -170,3 +170,19 @@ plt.tight_layout()
 plt.savefig("outputs/hy_growth.png", dpi=300)
 # Display the plot
 plt.show()
+
+# Get 2020 and 2025 station counts
+
+# Electric stations
+elec_2020 = growth.loc[2020, "ELEC"]
+elec_2025 = growth.loc[2025, "ELEC"]
+
+print(f"Electric stations (2020): {elec_2020}")
+print(f"Electric stations (2025): {elec_2025}")
+
+# Hydrogen stations
+hy_2020 = growth.loc[2020, "HY"]
+hy_2025 = growth.loc[2025, "HY"]
+
+print(f"Hydrogen stations (2020): {hy_2020}")
+print(f"Hydrogen stations (2025): {hy_2025}")
