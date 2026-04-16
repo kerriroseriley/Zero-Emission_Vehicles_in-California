@@ -102,7 +102,7 @@ map.py
     + Overall, positive growth in electric battery stations from 2020 to 2025
     + Major growth from 2020 to 2021 in stations
     + 2021 to 2022, there was no growth in Electric charging stations
-    + 2020 to 2025, there was moderate growth 
+    + 2022 to 2025, there was moderate growth 
 
 5. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
 ![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
