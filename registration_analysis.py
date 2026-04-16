@@ -70,7 +70,7 @@ plt.plot(
 # Force x-axis to show only whole years
 plt.xticks(growth.index)
 # Sets the chart title
-plt.title("Battery Electric Vehicle Growth (2020–2025)")
+plt.title("Battery Electric Vehicle Registrations Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Label y-axis
@@ -103,7 +103,7 @@ plt.plot(
 # Forces x-axis to show whole years
 plt.xticks(growth.index)
 # Sets chart title
-plt.title("Hydrogen Fuel Cell Vehicle Growth (2020–2025)")
+plt.title("Hydrogen Fuel Cell Vehicle Registration Growth (2020–2025)")
 # Labels x-axis
 plt.xlabel("Year")
 # Labels y-axis
