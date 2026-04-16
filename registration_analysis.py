@@ -136,7 +136,7 @@ bev_zip = (
 
 # Creates bar chart for top 10 Battery Electric Vehicle Registration Zip Codes
 plt.figure(figsize=(8,5))
-plt.bar(bev_zip["zip"], bev_zip["vehicles"], color="green")
+plt.bar(bev_zip["zip"], bev_zip["vehicles"], color="blue")
 
 # Set chart title
 plt.title("Battery Electric Vehicles Registrations in California by Zip Code (2025)")
@@ -169,7 +169,7 @@ h2_zip = (
 
 # Create bar chart for Hydrogen ZIP distribution
 plt.figure(figsize=(8,5))
-plt.bar(h2_zip["zip"], h2_zip["vehicles"], color="blue")
+plt.bar(h2_zip["zip"], h2_zip["vehicles"], color="green")
 
 # chart title
 plt.title("Hydrogen Fuel Cell Vehicles Registrations in California by ZIP Code (2025)")
