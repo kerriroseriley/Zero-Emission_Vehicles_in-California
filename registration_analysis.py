@@ -120,6 +120,24 @@ plt.savefig("outputs/h2_growth.png", dpi=300)
 plt.show()
 
 
+# Get values for 2020 and 2025
+
+# Battery Vehicle Electric
+bev_2020 = growth.loc[2020, "Battery Electric"]
+bev_2025 = growth.loc[2025, "Battery Electric"]
+
+print(f"Battery Electric (2020): {bev_2020}")
+print(f"Battery Electric (2025): {bev_2025}")
+
+# Hydrogen Fuel Cell Vehicle 
+h2_2020 = growth.loc[2020, "Hydrogen Fuel Cell"]
+h2_2025 = growth.loc[2025, "Hydrogen Fuel Cell"]
+
+print(f"Hydrogen Fuel Cell (2020): {h2_2020}")
+print(f"Hydrogen Fuel Cell (2025): {h2_2025}")
+
+
+
 # Top Zip Code Distribution
 
 # Groups data by ZIP and fuel type, summing total vehicles
