@@ -87,7 +87,7 @@ map.py
 
 1. Top 10 Zip Codes by Electric and Hydrogen Fuel Cell Vehicle Charger Count in 2025
 ![Top 10 Zip Codes of Electric Battery and Hydrogen Fuel Cell Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/ec3269fed882465c14e50e0caa1a89214e0e5e5a/outputs/top10_zip_charger_stations.png)
-    + The top 10 ZIP Codes had a range of 432 t0 1,413 battery electic charging stations
+    + The top 10 ZIP Codes had a range of 432 to 1,413 battery electic charging stations
     + The top 10 ZIP Codes had a range of 5 to 9 Hydrogen Fuel Cell charging stations
     
 2. Top 10 Zip Codes of Battery Electric Vehicles Registrations in 2025
