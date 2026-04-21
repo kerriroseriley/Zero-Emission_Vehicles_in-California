@@ -17,9 +17,20 @@ h2 = pd.read_csv("outputs/HY_ratio.csv")
 ev["zip"] = ev["zip"].astype(str).str.extract(r"(\d{5})")[0]
 h2["zip"] = h2["zip"].astype(str).str.extract(r"(\d{5})")[0]
 
+# Track before counts
+ev_before = len(ev)
+h2_before = len(h2)
+
 # Drop invalid ZIPs
 ev = ev.dropna(subset=["zip"])
 h2 = h2.dropna(subset=["zip"])
+
+# Track after counts
+ev_after = len(ev)
+h2_after = len(h2)
+
+print(f"EV dropped invalid ZIPs: {ev_before - ev_after} ({(ev_before - ev_after)/ev_before:.2%})")
+print(f"H2 dropped invalid ZIPs: {h2_before - h2_after} ({(h2_before - h2_after)/h2_before:.2%})")
  
 # Geography
 zcta = gpd.read_file("tl_2025_us_zcta520.zip")
@@ -31,8 +42,8 @@ ca = states[states["STATEFP"] == "06"]
 zcta = zcta.to_crs(ca.crs)
 
 # Clip ZIPS to California 
-zcta_ca = gpd.clip(zcta, ca)
- 
+zcta_ca = gpd.clip(zcta, ca, keep_geom_type=True)
+  
 # Standardize ZIP column 
 zcta_ca = zcta_ca.rename(columns={"ZCTA5CE20": "zip"})
 zcta_ca["zip"] = zcta_ca["zip"].astype(str)
