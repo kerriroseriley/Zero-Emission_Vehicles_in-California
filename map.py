@@ -64,8 +64,8 @@ print("H2 overlap:", len(overlap_h2))
 ev_ca = ev[ev["zip"].isin(zcta_ca["zip"])]
 h2_ca = h2[h2["zip"].isin(zcta_ca["zip"])]
 
-print("EV after filter:", len(ev_ca))
-print("H2 after filter:", len(h2_ca))
+print("EV after filtering to CA ZIP:", len(ev_ca))
+print("H2 after filter to CA ZIP:", len(h2_ca))
 
 # Merge the data
 ev_gdf = zcta_ca.merge(ev, on="zip", how="left")
@@ -74,7 +74,7 @@ h2_gdf = zcta_ca.merge(h2, on="zip", how="left")
 # Ensure GeoDataFrames
 ev_gdf = gpd.GeoDataFrame(ev_gdf, geometry="geometry", crs=zcta_ca.crs)
 h2_gdf = gpd.GeoDataFrame(h2_gdf, geometry="geometry", crs=zcta_ca.crs)
-
+ 
 # Create California layer
 ca_fill = ca.copy()
 ca_fill["layer"] = "background"
