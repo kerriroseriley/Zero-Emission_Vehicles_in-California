@@ -227,21 +227,24 @@ max_val = h2_zip["vehicles"].max()
 print(f"Minimum hydrogen registrations (top 10 zips): {min_val}")
 print(f"Maximum hydrogen registrations (top 10 zips): {max_val}")
 
-
+ 
 # Pie Chart (Total Share)
 
 
-# Aggregate total vehicles across all years
-fuel_totals = df.groupby("fuel")["vehicles"].sum()
+# Filter to 2025 only
+df_2025 = df[df["Year"] == 2025]
 
-print("\nTotal vehicles by fuel type:")
+# Aggregate total vehicles across 2025 only
+fuel_totals = df_2025.groupby("fuel")["vehicles"].sum()
+
+print("\nTotal vehicles by fuel type (2025 only):")
 print(fuel_totals)
 
-# Ensure consistent order (optional but cleaner)
+# Ensure consistent order
 fuel_totals = fuel_totals.reindex(
     ["Battery Electric", "Hydrogen Fuel Cell"],
     fill_value=0
-) 
+)
 
 # Create pie chart
 plt.figure(figsize=(6,6))
@@ -264,10 +267,10 @@ plt.legend(
     ncol=2
 )
 
-plt.title("ZEV Share: Battery Electric vs Hydrogen (California, 2020–2025)", pad=20)
+plt.title("ZEV Share: Battery Electric vs Hydrogen (California, 2025)", pad=20)
 plt.axis("equal")
 
 plt.tight_layout()
 
-plt.savefig("outputs/zev_share_pie.png", dpi=300)
+plt.savefig("outputs/zev_share_pie_2025.png", dpi=300)
 plt.show()
