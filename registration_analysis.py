@@ -217,7 +217,7 @@ plt.tight_layout()
 plt.savefig("outputs/h2_zip_top10.png", dpi=300)
 
 # Display final plot
-plt.show()
+plt.show() 
 
 # Display Min and max: 
     # Get min and max for Hydrogen top 10 ZIPs
@@ -226,3 +226,48 @@ max_val = h2_zip["vehicles"].max()
 
 print(f"Minimum hydrogen registrations (top 10 zips): {min_val}")
 print(f"Maximum hydrogen registrations (top 10 zips): {max_val}")
+
+
+# Pie Chart (Total Share)
+
+
+# Aggregate total vehicles across all years
+fuel_totals = df.groupby("fuel")["vehicles"].sum()
+
+print("\nTotal vehicles by fuel type:")
+print(fuel_totals)
+
+# Ensure consistent order (optional but cleaner)
+fuel_totals = fuel_totals.reindex(
+    ["Battery Electric", "Hydrogen Fuel Cell"],
+    fill_value=0
+)
+
+# Create pie chart
+plt.figure(figsize=(6,6))
+
+plt.pie(
+    fuel_totals,
+    autopct="%1.1f%%",
+    startangle=90
+)
+
+labels = [
+    f"{fuel} ({int(count):,})"
+    for fuel, count in fuel_totals.items()
+]
+
+plt.legend(
+    labels,
+    loc="lower center",
+    bbox_to_anchor=(0.5, -0.15),
+    ncol=2
+)
+
+plt.title("ZEV Share: Battery Electric vs Hydrogen (California, 2020–2025)", pad=20)
+plt.axis("equal")
+
+plt.tight_layout()
+
+plt.savefig("outputs/zev_share_pie.png", dpi=300)
+plt.show()
