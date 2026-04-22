@@ -241,7 +241,7 @@ print(fuel_totals)
 fuel_totals = fuel_totals.reindex(
     ["Battery Electric", "Hydrogen Fuel Cell"],
     fill_value=0
-)
+) 
 
 # Create pie chart
 plt.figure(figsize=(6,6))
