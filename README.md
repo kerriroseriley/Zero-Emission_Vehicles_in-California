@@ -78,7 +78,7 @@ merged.py
 + Merges datasets and calculates vehicles-per-station ratios, then saves results for electric and hydrogen separately.
 
 map.py
-+ Loads electric and hydrogen vehicle ratio datasets and cleans ZIP codes for consistent spatial matching.
++ Loads electric and hydrogen vehicle ratio datasets and cleans ZIP codes for consistent spatial matching. 
 + Loads U.S. ZIP Code Tabulation Areas and state boundaries, then clips ZIP geometries to California.
 + Joins ZEV ratio data to California ZIP geometries, creating geospatial datasets for electric and hydrogen metrics.
 + Exports the results as GeoPackage files, including a California base layer and two ZEV ratio spatial layers.
