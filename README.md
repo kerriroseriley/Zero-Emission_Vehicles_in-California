@@ -148,10 +148,10 @@ Classification method: Equal Counts (Quartiles)
 
 #### 10. Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025
 ![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8fd2d2e4e8120d2a5b45e65e421debae4f94180f/outputs/h2_growth.png)
-    + Growth in Hydrogen Fuel Cell vehicle registrations from 2020 to 2024
-    + In 2025, a sharp  decline downwardsin HFC vehicle regstration in California
-        + This was likely a market response to the reduciton in Hydrogen Fuel Cell stations we saw in 2023-2025
-    + In 5 years, there was a 6,608 increase in the number of Hydrogen Fuel Cell Vehicle Registrations in California
++ Growth in Hydrogen Fuel Cell vehicle registrations from 2020 to 2024
++ In 2025, a sharp  decline downwardsin HFC vehicle regstration in California
+    + This was likely a market response to the reduciton in Hydrogen Fuel Cell stations we saw in 2023-2025
++ In 5 years, there was a 6,608 increase in the number of Hydrogen Fuel Cell Vehicle Registrations in California
 
 
 #### 11. Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
