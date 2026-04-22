@@ -83,7 +83,13 @@ map.py
 + Joins ZEV ratio data to California ZIP geometries, creating geospatial datasets for electric and hydrogen metrics.
 + Exports the results as GeoPackage files, including a California base layer and two ZEV ratio spatial layers.
 
-## Visualizations: Bar Charts and Plots
+
+
+
+## Pie Chart
+
+
+## Visualizations: Battery Electric
 
 1. Top 10 Zip Codes by Electric and Hydrogen Fuel Cell Vehicle Charger Count in 2025
 ![Top 10 Zip Codes of Electric Battery and Hydrogen Fuel Cell Vehicle Stations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/ec3269fed882465c14e50e0caa1a89214e0e5e5a/outputs/top10_zip_charger_stations.png)
@@ -94,9 +100,7 @@ map.py
 ![Top 10 Zip Codes of Electric Battery Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/bev_zip_top10.png)
     + The top 10 ZIP Codes had a range of 22,015 to 31,909 EV registrations in 2025
 
-3. Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025
-![Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/h2_zip_top10.png)
-    + The top 10 ZIP Codes had a range of 334 to 564 HFC registrations in 2025
+
 
 4. Growth of Electric Battery Stations 2020-2025
 ![Growth of Electric Battery Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/elec_growth.png)
@@ -106,27 +110,11 @@ map.py
     + 2021 to 2022, there was minimal change the number of Electric charging stations (Reduction of 20 EV stations)
     + 2022 to 2025, there was moderate growth
 
-5. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
-![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
-    + Positive growth in Hydrogen Fuel Cell charging stations from 2020 to 2023
-    + In 2023, we see a downward shift continuing through to 2025
-    + This was a decrease from 59 to 50 charging stations in California
-    + Overall, there was an increase of 7 HFC charging stations in California
-
 6. Growth of Electric Battery Vehicle Registrations 2020-2025
 ![Growth of Electric Battery Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/a0779ddde01cfd2282bba2e91ecb5ae64fe13e51/outputs/bev_growth.png)
     + Exponential growth of Electric Battery Vehicle Registrations in California 
     + From 2020 to 2025, there was an 1,139,496 increase in the number of electric battery vehicle registrations in the State of California
 
-7. Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025
-![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8fd2d2e4e8120d2a5b45e65e421debae4f94180f/outputs/h2_growth.png)
-    + Growth in Hydrogen Fuel Cell vehicle registrations from 2020 to 2024
-    + In 2025, a sharp  decline downwardsin HFC vehicle regstration in California
-        + This was likely a market response to the reduciton in Hydrogen Fuel Cell stations we saw in 2023-2025
-    + In 5 years, there was a 6,608 increase in the number of Hydrogen Fuel Cell Vehicle Registrations in California
-
-
-## Visualizations: Mapping
 Missing ZIP codes in the heat map are not errors but result from how the data and geographic boundaries are defined and processed. The analysis combines vehicle registrations, charging station data, and Census ZCTA geometries, and a ZIP code will only appear with a value if it exists in at least one dataset. Areas with no recorded vehicles or stations therefore do not produce values and appear blank. In addition, USPS ZIP codes do not perfectly align with Census ZCTAs, so some ZIP codes in the data have no matching geographic polygon and are excluded during mapping. Further filtering steps, such as removing out-of-state entries, standardizing ZIP formats, and restricting the analysis to California, also eliminate some records. Finally, ZIP codes with zero charging stations yield undefined vehicle-to-station ratios, which are intentionally represented as missing values on the map.
 
 8. Battery Electric Vehicle Registration to Station Ratio by ZIP Code
@@ -136,6 +124,28 @@ Classification method: Equal Counts (Quartiles)
 + Equal Counts (Quartiles) classification was used to map the vehicle-to-station ratio for Battery Electric Vehicles (BEVs). This method divides the data into classes containing an equal number of observations, allowing for consistent comparison across regions.
 
 + BEV charging infrastructure is relatively widespread and more evenly developed, resulting in a smoother distribution of vehicle-to-station ratios. Using quartiles ensures that the data are evenly represented across classes and prevents the map from being dominated by a small number of high or low values. This approach is particularly useful for highlighting relative differences and ranking areas in terms of infrastructure availability.
+
+
+
+## Visualizations: Hydrogen Fuel Cell Vehicles 
+
+1. Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025
+![Top 10 Zip Codes of Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/61eb9fd686c60a70472676d6afe90142de5074ce/outputs/h2_zip_top10.png)
+    + The top 10 ZIP Codes had a range of 334 to 564 HFC registrations in 2025
+
+5. Growth of Hydrogen Fuel Cell Battery Stations 2020-2025
+![Growth of Hydrogen Fuel Cell Stations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/bed575d444fda91a00b829992250f859d935ce05/outputs/hy_growth.png)
+    + Positive growth in Hydrogen Fuel Cell charging stations from 2020 to 2023
+    + In 2023, we see a downward shift continuing through to 2025
+    + This was a decrease from 59 to 50 charging stations in California
+    + Overall, there was an increase of 7 HFC charging stations in California
+
+7. Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025
+![Growth of Hydrogen Fuel Cell Vehicle Registrations 2020-2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/8fd2d2e4e8120d2a5b45e65e421debae4f94180f/outputs/h2_growth.png)
+    + Growth in Hydrogen Fuel Cell vehicle registrations from 2020 to 2024
+    + In 2025, a sharp  decline downwardsin HFC vehicle regstration in California
+        + This was likely a market response to the reduciton in Hydrogen Fuel Cell stations we saw in 2023-2025
+    + In 5 years, there was a 6,608 increase in the number of Hydrogen Fuel Cell Vehicle Registrations in California
 
 
 9. Hydrogen Fuel Cell Vehicle to Station Ratio by ZIP Code
