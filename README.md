@@ -116,10 +116,11 @@ map.py
     + Exponential growth of Electric Battery Vehicle Registrations in California 
     + From 2020 to 2025, there was an 1,139,496 increase in the number of electric battery vehicle registrations in the State of California
 
-Missing ZIP codes in the heat map are not errors but result from how the data and geographic boundaries are defined and processed. The analysis combines vehicle registrations, charging station data, and Census ZCTA geometries, and a ZIP code will only appear with a value if it exists in at least one dataset. Areas with no recorded vehicles or stations therefore do not produce values and appear blank. In addition, USPS ZIP codes do not perfectly align with Census ZCTAs, so some ZIP codes in the data have no matching geographic polygon and are excluded during mapping. Further filtering steps, such as removing out-of-state entries, standardizing ZIP formats, and restricting the analysis to California, also eliminate some records. Finally, ZIP codes with zero charging stations yield undefined vehicle-to-station ratios, which are intentionally represented as missing values on the map.
-
 6. Battery Electric Vehicle Registration to Station Ratio by ZIP Code
 ![Battery Electric Vehicle Registration to Station Ratio](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/e9e5f319f7837db1a8b6fae485b160fd7bb4ba91/outputs/zev.png)
+Missing ZIP codes in the heat map are not errors but result from how the data and geographic boundaries are defined and processed. The analysis combines vehicle registrations, charging station data, and Census ZCTA geometries, and a ZIP code will only appear with a value if it exists in at least one dataset. Areas with no recorded vehicles or stations therefore do not produce values and appear blank. In addition, USPS ZIP codes do not perfectly align with Census ZCTAs, so some ZIP codes in the data have no matching geographic polygon and are excluded during mapping. Further filtering steps, such as removing out-of-state entries, standardizing ZIP formats, and restricting the analysis to California, also eliminate some records. Finally, ZIP codes with zero charging stations yield undefined vehicle-to-station ratios, which are intentionally represented as missing values on the map.
+
+
 Classification method: Equal Counts (Quartiles) 
 
 + Equal Counts (Quartiles) classification was used to map the vehicle-to-station ratio for Battery Electric Vehicles (BEVs). This method divides the data into classes containing an equal number of observations, allowing for consistent comparison across regions.
