@@ -87,7 +87,7 @@ map.py
 
 
 ## Pie Chart
-###1. Breakdown of Zero Emission Vehicle Registration Types in California in 2025
+### 1. Breakdown of Zero Emission Vehicle Registration Types in California in 2025
 ![Pie Chart of Battery Electric to Hydrogen Fuel Cell Vehicle Registrations in 2025](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/2430d9255d085fcd8542a07b89867dc83e2d0e4c/outputs/zev_share_pie_2025.png)
      + This pie chart shows that Battery Electric Vehicles dominate the ZEV industry with 99.1%, or about 1.4 million ZEV registrations, of zero emission vehicles being Battery Electric Vehicles.
 ## Visualizations: Battery Electric
