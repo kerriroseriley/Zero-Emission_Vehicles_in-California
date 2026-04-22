@@ -5,7 +5,7 @@ Output: elec_growth.png, hy_growth.png, top10_zip_charger_stations.png
     
 """ 
 
-# import modules
+# import modules 
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -33,67 +33,61 @@ df["Year"] = pd.to_numeric(df["Year"], errors="coerce").astype("Int64")
 df = df.dropna(subset=["Year"])
 
 
-# Top 10 ZIP Code Analysis
-
 zip_counts = df.groupby(["ZIP", "Fuel Type Code"]).size().reset_index(name="station_count")
 
-# Electric top 10 ZIPs
 elec_zip = (
     zip_counts[zip_counts["Fuel Type Code"] == "ELEC"]
     .sort_values("station_count", ascending=False)
     .head(10)
 )
 
-# Hydrogen top 10 ZIPs
 hy_zip = (
     zip_counts[zip_counts["Fuel Type Code"] == "HY"]
     .sort_values("station_count", ascending=False)
     .head(10)
 )
 
- 
-# Create side-by-side plots
-fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+# Top 10 ZIP Code Analysis: Battery Electric Stations
 
-# Electric
-axes[0].bar(elec_zip["ZIP"], elec_zip["station_count"], color="blue")
-axes[0].set_title("Number of Battery Electric Stations by ZIP Code (2025)")
-axes[0].set_xlabel("ZIP Code")
-axes[0].set_ylabel("Number of Stations")
-axes[0].tick_params(axis="x", rotation=45)
-axes[0].grid(axis="y", alpha=0.3)
+plt.figure(figsize=(7,5))
 
-# Hydrogen
-axes[1].bar(hy_zip["ZIP"], hy_zip["station_count"], color="green")
-axes[1].set_title("Number of Hydrogen Fuel Cell Stations by ZIP Code (2025)")
-axes[1].set_xlabel("ZIP Code")
-axes[1].set_ylabel("Number of Stations")
-axes[1].tick_params(axis="x", rotation=45)
-axes[1].grid(axis="y", alpha=0.3)
+plt.bar(elec_zip["ZIP"], elec_zip["station_count"], color="blue")
 
-# Layout fix
+plt.title("Number of Battery Electric Stations by ZIP Code (2025)")
+plt.xlabel("ZIP Code")
+plt.ylabel("Number of Stations")
+plt.xticks(rotation=45)
+plt.grid(axis="y", alpha=0.3)
+
 plt.tight_layout()
+plt.savefig("outputs/elec_top10_zip_charger_stations.png", dpi=300)
+plt.show()
 
-# Save combined figure
-plt.savefig("outputs/top10_zip_charger_stations.png", dpi=300)
 
-# Show plot
+
+# Top 10 ZIP Code Analysis: HFC Stations
+plt.figure(figsize=(7,5))
+
+plt.bar(hy_zip["ZIP"], hy_zip["station_count"], color="green")
+
+plt.title("Number of Hydrogen Fuel Cell Stations by ZIP Code (2025)")
+plt.xlabel("ZIP Code")
+plt.ylabel("Number of Stations")
+plt.xticks(rotation=45)
+plt.grid(axis="y", alpha=0.3)
+
+plt.tight_layout()
+plt.savefig("outputs/h2_top10_zip_charger_stations.png", dpi=300)
 plt.show()
 
 
 # Electric min and max
-elec_min = elec_zip["station_count"].min()
-elec_max = elec_zip["station_count"].max()
-
-print(f"Electric stations (top 10 zips) - Min: {elec_min}")
-print(f"Electric stations (top 10 zips) - Max: {elec_max}")
+print(f"Electric stations (top 10 zips) - Min: {elec_zip['station_count'].min()}")
+print(f"Electric stations (top 10 zips) - Max: {elec_zip['station_count'].max()}")
 
 # Hydrogen min and max
-hy_min = hy_zip["station_count"].min()
-hy_max = hy_zip["station_count"].max()
-
-print(f"Hydrogen stations (top 10 zips) - Min: {hy_min}")
-print(f"Hydrogen stations (top 10 zips) - Max: {hy_max}")
+print(f"Hydrogen stations (top 10 zips) - Min: {hy_zip['station_count'].min()}")
+print(f"Hydrogen stations (top 10 zips) - Max: {hy_zip['station_count'].max()}")
 
 
 
