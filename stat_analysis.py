@@ -19,7 +19,7 @@ df.columns = df.columns.str.strip()
 df["Fuel Type Code"] = (
     df["Fuel Type Code"]
     .astype(str)
-    .str.upper()
+    .str.upper() 
     .str.strip()
 )
 
