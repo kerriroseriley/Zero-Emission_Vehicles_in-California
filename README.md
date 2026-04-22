@@ -89,7 +89,7 @@ map.py
 ## Pie Chart
 1. 
 ![Pie Chart of Battery Electric to Hydrogen Fuel Cell Vehicle Registrations](https://github.com/kerriroseriley/Zero-Emission_Vehicles_in-California/blob/9ac7313b7404ced10de55944b526d5a9aefaf21e/outputs/zev_share_pie.png)
-
+ + This pie chart shows that Battery Electric Vehicles dominate the Zero emission vehicle industry.
 ## Visualizations: Battery Electric
     
     
