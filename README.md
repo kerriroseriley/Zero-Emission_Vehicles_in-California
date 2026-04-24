@@ -170,7 +170,7 @@ Key findings show a strong increase in Battery Electric Vehicle (BEV) registrati
 In several ZIP codes, vehicle adoption has outpaced the development of charging infrastructure, creating potential bottlenecks for continued ZEV adoption. This mismatch suggests that infrastructure expansion has not consistently kept pace with demand, particularly in high-growth EV regions.
 
 For Policy Makers and Planners in California:
- + Targeted infrastructure planning and development: Investments in zero-emission vehicle infrastructure should focus on ZIP codes where ZEV charger availability is disproportionately low compared to the number of registered zero-emission vehicles.
+ + Targeted infrastructure planning and development: Investments in battery electric vehicle infrastructure should focus on ZIP codes where charger availability is disproportionately low compared to the number of registered battery electric vehicles.
  + Addressing these gaps would improve accessibility and more equitable EV adoption across regions 
 
 ## References
