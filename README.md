@@ -164,14 +164,12 @@ Classification method: Natural Breaks (Jenks)
 
 ## Conclusion and Recommendations
 This project analyzes trends in Zero Emission Vehicle (ZEV) registrations alongside the spatial distribution and growth of charging infrastructure across ZIP codes in California, with a focus on 2025. By combining vehicle registration data with station availability, the analysis highlights how adoption and infrastructure development are not always aligned geographically.
-
-Key findings show a strong increase in Battery Electric Vehicle (BEV) registrations, particularly between 2021 and 2022, reflecting a rapid acceleration in consumer adoption of electric vehicles during that period. In contrast, hydrogen fuel cell vehicle growth remains comparatively limited and concentrated in fewer areas. While charging infrastructure has expanded over time, the growth is uneven across ZIP codes, resulting in clear disparities between regions with high EV adoption and those with limited charging access.
-
-In several ZIP codes, vehicle adoption has outpaced the development of charging infrastructure, creating potential bottlenecks for continued ZEV adoption. This mismatch suggests that infrastructure expansion has not consistently kept pace with demand, particularly in high-growth EV regions.
-
+Key findings show a strong and sustained increase in Battery Electric Vehicle (BEV) registrations, particularly between 2021 and 2022, reflecting a clear market preference and rapid acceleration in consumer adoption. In contrast, hydrogen fuel cell vehicle growth remains comparatively limited and concentrated in fewer areas, indicating weaker market uptake. This divergence suggests that consumers are overwhelmingly favoring BEVs over alternative zero-emission technologies. While charging infrastructure has expanded over time, the growth is uneven across ZIP codes, resulting in clear disparities between regions with high EV adoption and those with limited charging access.
+In several ZIP codes, vehicle adoption has outpaced the development of charging infrastructure, creating potential bottlenecks for continued ZEV adoption. This mismatch suggests that infrastructure expansion has not consistently kept pace with demand—particularly in high-growth BEV regions, where the need for reliable and accessible charging is most urgent.
 For Policy Makers and Planners in California:
- + Targeted infrastructure planning and development: Investments in battery electric vehicle infrastructure should focus on ZIP codes where charger availability is disproportionately low compared to the number of registered battery electric vehicles.
- + Addressing these gaps would improve accessibility and more equitable EV adoption across regions 
+Targeted infrastructure planning and development: Investments in zero-emission vehicle infrastructure should prioritize the expansion of BEV charging networks in ZIP codes where charger availability is disproportionately low relative to BEV registrations. Given strong and growing consumer demand for BEVs, infrastructure deployment should align with this market reality rather than be evenly distributed across technologies with unequal adoption.
+Strategic prioritization of BEV ecosystems: Policymakers and infrastructure developers should place greater emphasis on scaling BEV-supporting infrastructure, as current trends indicate that BEVs will continue to dominate ZEV adoption. Concentrating resources on BEV charging networks will maximize impact, reduce adoption bottlenecks, and more effectively support California’s emissions reduction goals.
+Addressing these gaps would improve accessibility, support continued growth in BEV adoption, and promote more equitable access to zero-emission transportation across regions.
 
 ## References
 “Advanced Clean Cars.” Advanced Clean Cars, ww2.arb.ca.gov/our-work/programs/drive-forward-light-duty-vehicle-program/advanced-clean-cars. Accessed 11 Apr. 2026. 
